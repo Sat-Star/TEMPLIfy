@@ -1,337 +1,2540 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
-    <meta
-      name="google-site-verification"
-      content="SbcNErI1xV0IxhX7FzVj-lKcn1f4q68clEfJHM6wM6E"
-    />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TEMPLIfyy | Premium Digital Templates</title>
-    <link rel="icon" type="image/png" href="logo.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>TEMPLIFYY - Your Professional Edge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="index.css" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Hanken Grotesk", sans-serif;
+        background: var(--bg);
+        color: var(--tx);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        transition:
+          background 0.4s var(--E),
+          color 0.4s var(--E);
+        cursor: auto;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      button,
+      input {
+        font-family: inherit;
+        border: none;
+        outline: none;
+      }
+
+      :root {
+        --bg: #07070b;
+        --s1: #0d0d12;
+        --s2: #121217;
+        --s3: #18181e;
+        --bd: rgba(255, 255, 255, 0.06);
+        --bd2: rgba(255, 255, 255, 0.11);
+        --ac: #bbff00;
+        --ac2: rgba(187, 255, 0, 0.1);
+        --tx: #f0ede6;
+        --mu: #47474b;
+        --mi: #838380;
+        --hover-bg: rgba(255, 255, 255, 0.013);
+        --input-bg: rgba(255, 255, 255, 0.04);
+        --footer-muted: rgba(255, 255, 255, 0.18);
+        --footer-heading: rgba(255, 255, 255, 0.18);
+        --scrollbar-thumb: #2a2a30;
+        --nav-bg: rgba(7, 7, 11, 0.9);
+        --noise-opacity: 0.028;
+        --card-shadow: 0 28px 70px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--bd);
+        --hero-grid-color: rgba(255, 255, 255, 0.025);
+        --btn-ghost-hover-bg: rgba(255, 255, 255, 0.03);
+        --btn-ghost-hover-border: rgba(255, 255, 255, 0.25);
+        --chip-bg: rgba(255, 255, 255, 0.03);
+        --soc-bg: rgba(255, 255, 255, 0.04);
+        --ticker-bg: #0d0d12;
+        --D: "Bebas Neue", sans-serif;
+        --B: "Hanken Grotesk", sans-serif;
+        --E: cubic-bezier(0.16, 1, 0.3, 1);
+        --nav-height: 60px;
+      }
+      [data-theme="light"] {
+        --bg: #fafaf7;
+        --s1: #ffffff;
+        --s2: #f3f3ee;
+        --s3: #ebebe5;
+        --bd: rgba(0, 0, 0, 0.07);
+        --bd2: rgba(0, 0, 0, 0.11);
+        --ac: #1a73e8;
+        --ac2: rgba(26, 115, 232, 0.1);
+        --tx: #1a1a16;
+        --mu: #5c5c55;
+        --mi: #7a7a72;
+        --hover-bg: rgba(0, 0, 0, 0.018);
+        --input-bg: rgba(0, 0, 0, 0.035);
+        --footer-muted: rgba(0, 0, 0, 0.28);
+        --footer-heading: rgba(0, 0, 0, 0.28);
+        --scrollbar-thumb: #d0d0c8;
+        --nav-bg: rgba(250, 250, 247, 0.92);
+        --noise-opacity: 0.022;
+        --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 0 0 1px var(--bd);
+        --hero-grid-color: rgba(0, 0, 0, 0.028);
+        --btn-ghost-hover-bg: rgba(0, 0, 0, 0.03);
+        --btn-ghost-hover-border: rgba(0, 0, 0, 0.22);
+        --chip-bg: rgba(0, 0, 0, 0.025);
+        --soc-bg: rgba(0, 0, 0, 0.04);
+        --ticker-bg: #ffffff;
+      }
+
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb);
+        border-radius: 8px;
+      }
+
+      /* noise overlay */
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 9000;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23f)'/%3E%3C/svg%3E");
+        opacity: var(--noise-opacity);
+        transition: opacity 0.4s var(--E);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.2;
+        }
+      }
+      @keyframes mq {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 500;
+        height: var(--nav-height);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3.5rem;
+        background: var(--nav-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--bd);
+        transition:
+          border-color 0.3s,
+          background 0.4s var(--E);
+      }
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-shrink: 0;
+      }
+      .nl {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .nl img {
+        height: 32px;
+        width: auto;
+        object-fit: contain;
+      }
+      .nl-fb {
+        font-family: var(--D);
+        font-size: 1.5rem;
+        letter-spacing: 0.08em;
+        color: var(--tx);
+        transition: color 0.4s var(--E);
+      }
+      .nv {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+      .nv a {
+        font-size: 0.79rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: var(--mu);
+        transition: color 0.18s;
+        white-space: nowrap;
+      }
+      .nv a:hover {
+        color: var(--tx);
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        flex-shrink: 0;
+      }
+      .nc {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        background: var(--ac);
+        color: #000;
+        padding: 0.5rem 1.25rem;
+        border-radius: 5px;
+        font-weight: 800;
+        font-size: 0.78rem;
+        letter-spacing: 0.02em;
+        transition:
+          opacity 0.18s,
+          transform 0.15s var(--E);
+        white-space: nowrap;
+      }
+      .nc:hover {
+        opacity: 0.8;
+        transform: translateY(-1px);
+      }
+      .theme-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: transparent;
+        border: 1px solid var(--bd2);
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--mu);
+        transition: all 0.22s var(--E);
+        position: relative;
+        overflow: hidden;
+      }
+      .theme-toggle:hover {
+        border-color: var(--ac);
+        color: var(--ac);
+        background: var(--ac2);
+      }
+      .theme-toggle .tt-sun,
+      .theme-toggle .tt-moon {
+        position: absolute;
+        transition:
+          transform 0.35s var(--E),
+          opacity 0.35s var(--E);
+        line-height: 1;
+      }
+      .theme-toggle .tt-sun {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .theme-toggle .tt-moon {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      [data-theme="light"] .theme-toggle .tt-sun {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      [data-theme="light"] .theme-toggle .tt-moon {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 600;
+        border-radius: 4px;
+        transition: background 0.18s;
+      }
+      .hamburger:hover {
+        background: var(--hover-bg);
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--tx);
+        border-radius: 2px;
+        transition: all 0.3s var(--E);
+        transform-origin: center;
+      }
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: var(--nav-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--bd);
+        padding: 1.2rem 1.5rem 1.8rem;
+        z-index: 499;
+        flex-direction: column;
+        gap: 0.3rem;
+        animation: fadeUp 0.3s var(--E);
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      .mobile-menu a {
+        display: block;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--mu);
+        border-radius: 6px;
+        transition: all 0.18s;
+      }
+      .mobile-menu a:hover,
+      .mobile-menu a:active {
+        color: var(--tx);
+        background: var(--hover-bg);
+      }
+      .mobile-menu .mm-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        background: var(--ac);
+        color: #000;
+        padding: 0.7rem 1.4rem;
+        border-radius: 5px;
+        font-weight: 800;
+        font-size: 0.82rem;
+        letter-spacing: 0.02em;
+        margin-top: 0.6rem;
+        text-align: center;
+        justify-content: center;
+      }
+
+      /* hero (unchanged) */
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 55% 45%;
+        align-items: center;
+        padding: 7rem 3.5rem 5rem;
+        gap: 2.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(var(--hero-grid-color) 1px, transparent 1px),
+          linear-gradient(90deg, var(--hero-grid-color) 1px, transparent 1px);
+        background-size: 68px 68px;
+        mask-image: radial-gradient(
+          ellipse 75% 80% at 22% 45%,
+          #000 25%,
+          transparent 75%
+        );
+      }
+      .hbadge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 1px solid var(--bd2);
+        border-radius: 4px;
+        padding: 0.28rem 0.75rem;
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--mu);
+        animation: fadeUp 0.7s var(--E) 0.1s both;
+      }
+      .hbadge .dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--ac);
+        animation: blink 2s infinite;
+      }
+      .hero h1 {
+        font-family: var(--D);
+        font-size: clamp(5.5rem, 10vw, 10.5rem);
+        line-height: 0.88;
+        letter-spacing: 0.01em;
+        margin: 1.4rem 0 1.8rem;
+        animation: fadeUp 0.85s var(--E) 0.22s both;
+      }
+      .hero h1 .lime {
+        color: var(--ac);
+      }
+      .hsub {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--mu);
+        max-width: 420px;
+        animation: fadeUp 0.85s var(--E) 0.36s both;
+      }
+      .hbtns {
+        display: flex;
+        gap: 0.65rem;
+        flex-wrap: wrap;
+        margin-top: 2.2rem;
+        animation: fadeUp 0.85s var(--E) 0.5s both;
+      }
+      .btn-ac {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: var(--ac);
+        color: #000;
+        padding: 0.78rem 1.7rem;
+        border-radius: 5px;
+        font-weight: 800;
+        font-size: 0.84rem;
+        transition:
+          opacity 0.18s,
+          transform 0.15s var(--E);
+      }
+      .btn-ac:hover {
+        opacity: 0.8;
+        transform: translateY(-2px);
+      }
+      .btn-gh {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        border: 1px solid var(--bd2);
+        color: var(--mi);
+        background: transparent;
+        padding: 0.78rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 0.84rem;
+        transition:
+          border-color 0.18s,
+          color 0.18s,
+          background 0.18s;
+      }
+      .btn-gh:hover {
+        border-color: var(--btn-ghost-hover-border);
+        color: var(--tx);
+        background: var(--btn-ghost-hover-bg);
+      }
+      .hstats {
+        display: flex;
+        gap: 2.5rem;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--bd);
+        animation: fadeUp 0.85s var(--E) 0.65s both;
+      }
+      .hs-n {
+        font-family: var(--D);
+        font-size: 2.5rem;
+        letter-spacing: 0.03em;
+        line-height: 1;
+      }
+      .hs-n .a {
+        color: var(--ac);
+      }
+      .hs-l {
+        font-size: 0.63rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--mu);
+        margin-top: 0.18rem;
+      }
+
+      /* right card stack (unchanged) */
+      .hright {
+        position: relative;
+        height: 490px;
+        animation: slideIn 0.9s var(--E) 0.55s both;
+      }
+      .dcard {
+        position: absolute;
+        background: var(--s1);
+        border: 1px solid var(--bd2);
+        border-radius: 11px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.5s var(--E);
+      }
+      .dc-main {
+        width: 355px;
+        top: 0;
+        left: 0;
+        z-index: 3;
+      }
+      .dc-b1 {
+        width: 310px;
+        top: 22px;
+        left: 55px;
+        z-index: 1;
+        transform: rotate(3.5deg);
+        opacity: 0.45;
+        background: var(--s2);
+      }
+      .dc-b2 {
+        width: 295px;
+        top: 28px;
+        right: 5px;
+        z-index: 2;
+        transform: rotate(-2.2deg);
+        opacity: 0.6;
+        background: var(--s1);
+      }
+      .hright:hover .dc-b1 {
+        transform: rotate(5.5deg) translate(10px, 6px);
+      }
+      .hright:hover .dc-b2 {
+        transform: rotate(-4deg) translate(-6px, 9px);
+      }
+      .dbar {
+        background: var(--s2);
+        padding: 0.55rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-bottom: 1px solid var(--bd);
+      }
+      .ddots {
+        display: flex;
+        gap: 4px;
+      }
+      .ddots span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ff5f57;
+      }
+      .ddots span:nth-child(2) {
+        background: #ffbd2e;
+      }
+      .ddots span:nth-child(3) {
+        background: #28c840;
+      }
+      .durl {
+        flex: 1;
+        text-align: center;
+        font-size: 0.64rem;
+        font-family: monospace;
+        color: var(--mu);
+      }
+      .dbody {
+        padding: 1.4rem 1.5rem;
+      }
+      .dtag {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ac);
+        margin-bottom: 0.55rem;
+      }
+      .dname {
+        font-family: var(--D);
+        font-size: 1.4rem;
+        letter-spacing: 0.03em;
+        margin-bottom: 0.28rem;
+      }
+      .drole {
+        font-size: 0.7rem;
+        color: var(--mu);
+        margin-bottom: 1rem;
+      }
+      .ddiv {
+        height: 1px;
+        background: var(--bd);
+        margin-bottom: 1rem;
+      }
+      .dl {
+        height: 4px;
+        border-radius: 2px;
+        background: rgba(128, 128, 128, 0.15);
+        margin: 0.28rem 0;
+      }
+      .dl.la {
+        background: var(--ac2);
+        width: 58%;
+      }
+      .dchips {
+        display: flex;
+        gap: 0.35rem;
+        margin-top: 0.9rem;
+        flex-wrap: wrap;
+      }
+      .dchip {
+        font-size: 0.56rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.17rem 0.48rem;
+        border-radius: 3px;
+        background: var(--ac2);
+        color: var(--ac);
+        border: 1px solid rgba(187, 255, 0, 0.18);
+      }
+
+      .ticker {
+        border-top: 1px solid var(--bd);
+        border-bottom: 1px solid var(--bd);
+        background: var(--ticker-bg);
+        overflow: hidden;
+        padding: 0.8rem 0;
+      }
+      .ttrack {
+        display: flex;
+        gap: 1.8rem;
+        animation: mq 32s linear infinite;
+        white-space: nowrap;
+      }
+      .titem {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        font-size: 0.67rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--mu);
+        flex-shrink: 0;
+      }
+      .tdot {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--ac);
+        opacity: 0.45;
+      }
+
+      section {
+        padding: 8rem 3.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      section + section {
+        border-top: 1px solid var(--bd);
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+      .ey-lbl {
+        font-size: 0.63rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mu);
+        white-space: nowrap;
+      }
+      .ey-line {
+        flex: 1;
+        height: 1px;
+        background: var(--bd);
+      }
+
+      /* improved product header */
+      .prod-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-bottom: 4rem;
+        position: relative;
+      }
+      .prod-head::after {
+        content: "";
+        position: absolute;
+        bottom: -2rem;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(to right, var(--ac), transparent);
+        opacity: 0.3;
+      }
+      .ph {
+        font-family: var(--D);
+        font-size: clamp(4rem, 8vw, 6.5rem);
+        letter-spacing: 0;
+        line-height: 0.85;
+        text-transform: uppercase;
+      }
+      .ph span {
+        display: block;
+        color: var(--ac);
+        font-size: 0.6em;
+        letter-spacing: 0.1em;
+        line-height: 1;
+        margin-top: 0.25rem;
+        font-family: var(--B);
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .prod-note {
+        font-size: 0.9rem;
+        color: var(--mu);
+        line-height: 1.6;
+        max-width: 240px;
+        text-align: right;
+        border-left: 2px solid var(--ac);
+        padding-left: 1.5rem;
+      }
+
+      .plist {
+        border-top: 1px solid var(--bd);
+        margin-top: 2rem;
+      }
+      .pi {
+        display: grid;
+        grid-template-columns: 72px 1fr 36px;
+        align-items: start;
+        gap: 2rem;
+        padding: 2.2rem 0;
+        border-bottom: 1px solid var(--bd);
+        position: relative;
+        overflow: hidden;
+        transition:
+          padding-left 0.32s var(--E),
+          background 0.22s;
+      }
+      .pi::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--ac);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.35s var(--E);
+      }
+      .pi:hover {
+        padding-left: 1.4rem;
+        background: var(--hover-bg);
+      }
+      .pi:hover::before {
+        transform: scaleY(1);
+      }
+      .pinum {
+        font-family: var(--D);
+        font-size: 2.8rem;
+        letter-spacing: 0.04em;
+        color: var(--mu);
+        line-height: 1;
+        padding-top: 0.08rem;
+        transition: color 0.25s;
+      }
+      .pi:hover .pinum {
+        color: var(--ac);
+      }
+      .pitags {
+        display: flex;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.55rem;
+      }
+      .pitag {
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.18rem 0.5rem;
+        border-radius: 3px;
+        border: 1px solid var(--bd2);
+        color: var(--mu);
+      }
+      .ptcorp {
+        border-color: rgba(187, 255, 0, 0.2);
+        color: var(--ac);
+      }
+      .ptfree {
+        border-color: rgba(52, 211, 153, 0.2);
+        color: #34d399;
+      }
+      .ptcreate {
+        border-color: rgba(192, 132, 252, 0.2);
+        color: #c084fc;
+      }
+      .piname {
+        font-family: var(--D);
+        font-size: 2.2rem;
+        letter-spacing: 0.03em;
+        line-height: 1;
+        margin-bottom: 0.55rem;
+      }
+      .pi:hover .piname {
+        color: var(--ac);
+      }
+      .pidesc {
+        font-size: 0.84rem;
+        line-height: 1.72;
+        color: var(--mu);
+        max-width: 500px;
+      }
+      .piarr {
+        font-size: 1.3rem;
+        color: var(--mu);
+        padding-top: 0.35rem;
+        transition:
+          color 0.25s,
+          transform 0.25s var(--E);
+      }
+      .pi:hover .piarr {
+        color: var(--ac);
+        transform: translateX(5px);
+      }
+
+      /* who it's for (unchanged) */
+      .wrows {
+        border-top: 1px solid var(--bd);
+        margin-top: 3rem;
+      }
+      .wrow {
+        display: grid;
+        grid-template-columns: 80px 1fr 260px;
+        gap: 2.5rem;
+        align-items: start;
+        padding: 2.5rem 0;
+        border-bottom: 1px solid var(--bd);
+        position: relative;
+        overflow: hidden;
+        transition:
+          padding-left 0.32s var(--E),
+          background 0.22s;
+      }
+      .wrow::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--ac);
+        transform: scaleY(0);
+        transition: transform 0.35s var(--E);
+      }
+      .wrow:hover {
+        padding-left: 1.4rem;
+        background: var(--hover-bg);
+      }
+      .wrow:hover::before {
+        transform: scaleY(1);
+      }
+      .wrn {
+        font-family: var(--D);
+        font-size: 3rem;
+        color: var(--mu);
+        transition: color 0.25s;
+      }
+      .wrow:hover .wrn {
+        color: var(--ac);
+      }
+      .wrlabel {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--mu);
+        margin-bottom: 0.45rem;
+      }
+      .wrtitle {
+        font-family: var(--D);
+        font-size: 2.3rem;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        margin-bottom: 0.75rem;
+      }
+      .wrdesc {
+        font-size: 0.85rem;
+        line-height: 1.75;
+        color: var(--mu);
+      }
+      .wrchips {
+        display: flex;
+        flex-direction: column;
+        gap: 0.38rem;
+        padding-top: 0.3rem;
+      }
+      .wrc {
+        font-size: 0.69rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        padding: 0.38rem 0.7rem;
+        border-radius: 4px;
+        background: var(--chip-bg);
+        border: 1px solid var(--bd2);
+        color: var(--mi);
+      }
+
+      /* process (unchanged) */
+      .prgrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 3rem;
+        border: 1px solid var(--bd);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .prcell {
+        padding: 2.2rem 1.8rem;
+        border-right: 1px solid var(--bd);
+        transition: background 0.22s;
+      }
+      .prcell:last-child {
+        border-right: none;
+      }
+      .prcell:hover {
+        background: var(--s1);
+      }
+      .prn {
+        font-family: var(--D);
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
+        color: var(--ac);
+        margin-bottom: 1.2rem;
+      }
+      .pricon {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+      .prname {
+        font-family: var(--D);
+        font-size: 1.3rem;
+        letter-spacing: 0.02em;
+        margin-bottom: 0.5rem;
+      }
+      .prdesc {
+        font-size: 0.82rem;
+        line-height: 1.68;
+        color: var(--mu);
+      }
+
+      /* coming soon / roadmap (unchanged) */
+      .coming {
+        background: var(--s1);
+      }
+      .clayout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: start;
+      }
+      .ch {
+        font-family: var(--D);
+        font-size: clamp(2.8rem, 5.5vw, 4rem);
+        letter-spacing: 0.02em;
+        line-height: 0.9;
+        margin-bottom: 1rem;
+      }
+      .csub {
+        font-size: 0.9rem;
+        line-height: 1.78;
+        color: var(--mu);
+        margin-bottom: 2rem;
+      }
+      .tl {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+      }
+      .tld {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--bd2);
+      }
+      .tld.done {
+        background: #34d399;
+        box-shadow: 0 0 6px rgba(52, 211, 153, 0.5);
+      }
+      .tld.now {
+        background: var(--ac);
+        box-shadow: 0 0 6px rgba(187, 255, 0, 0.5);
+      }
+      .tlt {
+        font-size: 0.71rem;
+        color: var(--mu);
+      }
+      .tll {
+        width: 18px;
+        height: 1px;
+        background: var(--bd);
+      }
+      .wlform {
+        display: flex;
+        gap: 0.5rem;
+      }
+      .wlinp {
+        flex: 1;
+        background: var(--input-bg);
+        border: 1px solid var(--bd2);
+        border-radius: 5px;
+        padding: 0.75rem 1rem;
+        font-size: 0.84rem;
+        color: var(--tx);
+      }
+      .wlinp:focus {
+        border-color: var(--ac);
+      }
+      .cflist {
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+      .cf {
+        padding: 1.2rem 1.4rem;
+        border: 1px solid var(--bd);
+        border-radius: 8px;
+        background: var(--hover-bg);
+        display: flex;
+        align-items: flex-start;
+        gap: 0.9rem;
+        position: relative;
+      }
+      .cf:hover {
+        border-color: var(--bd2);
+        background: var(--chip-bg);
+      }
+      .cficon {
+        font-size: 1.1rem;
+        margin-top: 0.1rem;
+      }
+      .cft {
+        font-weight: 700;
+        font-size: 0.88rem;
+        margin-bottom: 0.28rem;
+      }
+      .cfd {
+        font-size: 0.8rem;
+        color: var(--mu);
+        line-height: 1.6;
+      }
+      .cfsoon {
+        position: absolute;
+        top: 0.7rem;
+        right: 0.75rem;
+        font-size: 0.57rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 0.16rem 0.48rem;
+        border-radius: 3px;
+        background: var(--ac2);
+        color: var(--ac);
+        border: 1px solid rgba(187, 255, 0, 0.2);
+      }
+
+      /* testimonials */
+      .tgrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 3rem;
+        border: 1px solid var(--bd);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .tcell {
+        padding: 2rem;
+        border-right: 1px solid var(--bd);
+        transition: background 0.22s;
+      }
+      .tcell:last-child {
+        border-right: none;
+      }
+      .tcell:hover {
+        background: var(--s1);
+      }
+      .tstars {
+        display: flex;
+        gap: 2px;
+        margin-bottom: 1.2rem;
+      }
+      .tstar {
+        width: 11px;
+        height: 11px;
+        background: #fbbf24;
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+      }
+      .tq {
+        font-size: 0.87rem;
+        line-height: 1.78;
+        color: var(--mi);
+        margin-bottom: 1.5rem;
+      }
+      .tauth {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+      .tav {
+        width: 31px;
+        height: 31px;
+        border-radius: 50%;
+        background: var(--s3);
+        border: 1px solid var(--bd2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+        font-weight: 800;
+        color: var(--ac);
+      }
+      .tname {
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+      .trole {
+        font-size: 0.71rem;
+        color: var(--mu);
+      }
+
+      /* pricing */
+      .pgrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 3rem;
+        border: 1px solid var(--bd);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .pcell {
+        padding: 2.4rem 2rem;
+        border-right: 1px solid var(--bd);
+        position: relative;
+        transition: background 0.22s;
+      }
+      .pcell:last-child {
+        border-right: none;
+      }
+      .pcell:hover {
+        background: var(--s1);
+      }
+      .pcell.pop {
+        background: var(--s2);
+      }
+      .poptag {
+        position: absolute;
+        top: 1.4rem;
+        right: 1.4rem;
+        font-size: 0.57rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.16rem 0.48rem;
+        border-radius: 3px;
+        background: var(--ac2);
+        color: var(--ac);
+        border: 1px solid rgba(187, 255, 0, 0.22);
+      }
+      .ptier {
+        font-size: 0.63rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--mu);
+        margin-bottom: 0.45rem;
+      }
+      .pname {
+        font-family: var(--D);
+        font-size: 1.55rem;
+        letter-spacing: 0.03em;
+        margin-bottom: 1.2rem;
+      }
+      .pamount {
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+        margin-bottom: 1.8rem;
+      }
+      .pcur {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--mi);
+      }
+      .pnum {
+        font-family: var(--D);
+        font-size: 3.2rem;
+        letter-spacing: -0.01em;
+        line-height: 1;
+      }
+      .pmo {
+        font-size: 0.77rem;
+        color: var(--mu);
+      }
+      .pfeats {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.52rem;
+        margin-bottom: 2rem;
+      }
+      .pfeats li {
+        font-size: 0.83rem;
+        display: flex;
+        align-items: center;
+        gap: 0.58rem;
+      }
+      .ck {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: rgba(52, 211, 153, 0.1);
+        border: 1px solid rgba(52, 211, 153, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.55rem;
+        color: #34d399;
+      }
+      .off {
+        color: var(--mu);
+      }
+      .off .ck {
+        background: transparent;
+        border-color: var(--bd);
+        color: transparent;
+      }
+      .pbtn {
+        display: block;
+        text-align: center;
+        padding: 0.82rem;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.84rem;
+        transition: all 0.18s;
+        cursor: pointer;
+      }
+      .pbtn-o {
+        border: 1px solid var(--bd2);
+        color: var(--mi);
+        background: transparent;
+      }
+      .pbtn-o:hover {
+        border-color: var(--btn-ghost-hover-border);
+        color: var(--tx);
+        background: var(--btn-ghost-hover-bg);
+      }
+      .pbtn-a {
+        background: var(--ac);
+        color: #000;
+      }
+      .pbtn-a:hover {
+        opacity: 0.8;
+      }
+
+      .ctaband {
+        background: var(--ac);
+        margin: 0 3.5rem 5.5rem;
+        border-radius: 10px;
+        padding: 3.5rem 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+        position: relative;
+        overflow: hidden;
+      }
+      .ctaband::before {
+        content: "PROVAULT";
+        position: absolute;
+        right: -1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: var(--D);
+        font-size: 8rem;
+        letter-spacing: 0.04em;
+        color: rgba(0, 0, 0, 0.07);
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      .cbh {
+        font-family: var(--D);
+        font-size: clamp(1.9rem, 4vw, 3rem);
+        letter-spacing: 0.02em;
+        color: #000;
+      }
+      .cbsub {
+        font-size: 0.87rem;
+        color: rgba(0, 0, 0, 0.5);
+        margin-top: 0.3rem;
+      }
+      .cbbtn {
+        background: #000;
+        color: var(--ac);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.9rem 2rem;
+        border-radius: 6px;
+        font-weight: 800;
+        font-size: 0.87rem;
+        transition:
+          opacity 0.18s,
+          transform 0.15s var(--E);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .cbbtn:hover {
+        opacity: 0.8;
+        transform: translateY(-2px);
+      }
+
+      footer {
+        border-top: 1px solid var(--bd);
+        padding: 4rem 3.5rem 2rem;
+      }
+      .fgrid {
+        display: grid;
+        grid-template-columns: 2.2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+      .fblogo img {
+        height: 26px;
+        margin-bottom: 1rem;
+      }
+      .fblogo-text {
+        font-family: var(--D);
+        font-size: 1.35rem;
+        letter-spacing: 0.08em;
+        color: var(--tx);
+        margin-bottom: 1rem;
+      }
+      .fbp {
+        font-size: 0.81rem;
+        color: var(--mu);
+        line-height: 1.72;
+        max-width: 210px;
+      }
+      .fcol h4 {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--footer-heading);
+        margin-bottom: 1.1rem;
+      }
+      .fcol ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.48rem;
+      }
+      .fcol ul a {
+        font-size: 0.8rem;
+        color: var(--mu);
+        transition: color 0.18s;
+      }
+      .fcol ul a:hover {
+        color: var(--tx);
+      }
+      .fbot {
+        border-top: 1px solid var(--bd);
+        padding-top: 1.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .fbot p {
+        font-size: 0.73rem;
+        color: var(--footer-muted);
+      }
+      .fsocs {
+        display: flex;
+        gap: 0.4rem;
+      }
+      .soc {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        background: var(--soc-bg);
+        border: 1px solid var(--bd);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.72rem;
+        color: var(--mu);
+        transition:
+          background 0.18s,
+          color 0.18s,
+          border-color 0.18s;
+        cursor: pointer;
+      }
+      .soc:hover {
+        background: var(--ac2);
+        color: var(--ac);
+        border-color: rgba(187, 255, 0, 0.2);
+      }
+
+      .rev {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.75s var(--E),
+          transform 0.75s var(--E);
+      }
+      .rev.in {
+        opacity: 1;
+        transform: none;
+      }
+      .d1 {
+        transition-delay: 0.08s;
+      }
+      .d2 {
+        transition-delay: 0.16s;
+      }
+      .d3 {
+        transition-delay: 0.24s;
+      }
+      .d4 {
+        transition-delay: 0.32s;
+      }
+
+      @media (max-width: 1200px) {
+        .hero {
+          grid-template-columns: 52% 48%;
+          padding: 6rem 2.5rem 4rem;
+          gap: 1.5rem;
+        }
+        .dc-main {
+          width: 300px;
+        }
+        .dc-b1 {
+          width: 265px;
+          left: 40px;
+        }
+        .dc-b2 {
+          width: 250px;
+          right: 0;
+        }
+        .hright {
+          height: 420px;
+        }
+        section {
+          padding: 6rem 2.5rem;
+        }
+        .ctaband {
+          margin: 0 2.5rem 4.5rem;
+          padding: 3rem 3rem;
+        }
+        footer {
+          padding: 3.5rem 2.5rem 2rem;
+        }
+        nav {
+          padding: 0 2.5rem;
+        }
+        .clayout {
+          gap: 3rem;
+        }
+        .fgrid {
+          gap: 2rem;
+        }
+      }
+      @media (max-width: 1024px) {
+        .nv {
+          gap: 1.2rem;
+        }
+        .nv a {
+          font-size: 0.73rem;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          padding: 7rem 2rem 3.5rem;
+          min-height: auto;
+        }
+        .hright {
+          display: none;
+        }
+        .prgrid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .prcell {
+          border-bottom: 1px solid var(--bd);
+        }
+        .prcell:nth-child(2n) {
+          border-right: none;
+        }
+        .prcell:nth-child(3),
+        .prcell:nth-child(4) {
+          border-bottom: none;
+        }
+        .clayout {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+        .tgrid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .tcell:nth-child(2) {
+          border-right: none;
+        }
+        .tcell:nth-child(3) {
+          display: none;
+        }
+        .pgrid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .pcell:nth-child(2) {
+          border-right: none;
+        }
+        .pcell:nth-child(3) {
+          grid-column: 1/-1;
+          border-top: 1px solid var(--bd);
+          border-right: none;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+          align-items: center;
+        }
+        .pcell:nth-child(3) .pfeats {
+          margin-bottom: 0;
+        }
+        .fgrid {
+          grid-template-columns: 1.5fr 1fr 1fr;
+          gap: 2rem;
+        }
+        .fgrid > div:first-child {
+          grid-column: 1/-1;
+          max-width: 100%;
+        }
+        .fbp {
+          max-width: 400px;
+        }
+        .ctaband {
+          margin: 0 2rem 4rem;
+          padding: 2.8rem 2.5rem;
+        }
+        section {
+          padding: 5rem 2rem;
+        }
+        footer {
+          padding: 3rem 2rem 2rem;
+        }
+        .prod-note {
+          text-align: left;
+          max-width: 100%;
+        }
+        .prod-head {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+      @media (max-width: 768px) {
+        :root {
+          --nav-height: 56px;
+        }
+        .nv {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .nav-actions .nc {
+          display: none;
+        }
+        .mobile-menu .mm-cta {
+          display: inline-flex;
+        }
+        nav {
+          padding: 0 1.2rem;
+        }
+        section {
+          padding: 4rem 1.2rem;
+        }
+        .hero {
+          padding: 6rem 1.2rem 3rem;
+        }
+        .hero h1 {
+          font-size: clamp(3.5rem, 12vw, 6rem);
+        }
+        .hstats {
+          gap: 1.5rem;
+          flex-wrap: wrap;
+        }
+        .hs-n {
+          font-size: 2rem;
+        }
+        .pi {
+          grid-template-columns: 44px 1fr 22px;
+          gap: 0.8rem;
+          padding: 1.6rem 0;
+        }
+        .pinum {
+          font-size: 1.8rem;
+        }
+        .piname {
+          font-size: 1.4rem;
+        }
+        .pi:hover {
+          padding-left: 0.8rem;
+        }
+        .wrow {
+          grid-template-columns: 50px 1fr;
+          gap: 1rem;
+          padding: 2rem 0;
+        }
+        .wrchips {
+          flex-direction: row;
+          flex-wrap: wrap;
+          grid-column: 1/-1;
+        }
+        .wrc {
+          display: inline-block;
+          font-size: 0.64rem;
+          padding: 0.3rem 0.55rem;
+        }
+        .wrn {
+          font-size: 2.2rem;
+        }
+        .wrtitle {
+          font-size: 1.7rem;
+        }
+        .prgrid {
+          grid-template-columns: 1fr;
+        }
+        .prcell {
+          border-right: none;
+          border-bottom: 1px solid var(--bd);
+          padding: 1.6rem 1.5rem;
+        }
+        .prcell:last-child {
+          border-bottom: none;
+        }
+        .tgrid {
+          grid-template-columns: 1fr;
+        }
+        .tcell {
+          border-right: none;
+          border-bottom: 1px solid var(--bd);
+          padding: 1.5rem;
+        }
+        .tcell:last-child {
+          border-bottom: none;
+        }
+        .tcell:nth-child(3) {
+          display: block;
+        }
+        .pgrid {
+          grid-template-columns: 1fr;
+        }
+        .pcell {
+          border-right: none;
+          border-bottom: 1px solid var(--bd);
+        }
+        .pcell:last-child {
+          border-bottom: none;
+        }
+        .pcell:nth-child(2) {
+          border-right: none;
+        }
+        .pcell:nth-child(3) {
+          grid-column: auto;
+          border-top: none;
+          display: block;
+        }
+        .pcell:nth-child(3) .pfeats {
+          margin-bottom: 2rem;
+        }
+        .clayout {
+          gap: 2rem;
+        }
+        .ctaband {
+          margin: 0 1.2rem 3.5rem;
+          padding: 2.2rem 1.6rem;
+          flex-direction: column;
+          text-align: center;
+          gap: 1.5rem;
+        }
+        .ctaband::before {
+          font-size: 4rem;
+          right: 50%;
+          transform: translate(50%, -50%);
+          opacity: 0.06;
+        }
+        .cbh {
+          font-size: 1.6rem;
+        }
+        .wlform {
+          flex-direction: column;
+        }
+        .fgrid {
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem 1.5rem;
+        }
+        .fgrid > div:first-child {
+          grid-column: 1/-1;
+        }
+        footer {
+          padding: 2.5rem 1.2rem 1.5rem;
+        }
+        .fbot {
+          flex-direction: column;
+          text-align: center;
+          gap: 0.8rem;
+        }
+        .ph {
+          font-size: clamp(2.4rem, 8vw, 3.5rem);
+        }
+        .prod-note {
+          font-size: 0.78rem;
+          border-left: none;
+          padding-left: 0;
+          text-align: left;
+        }
+      }
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 2.8rem;
+        }
+        .btn-ac,
+        .btn-gh {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <div class="container header-content">
-        <div class="logo">
-          <!-- Updated: Logo is now circular without border -->
-          <img src="logo.png" alt="TEMPLIfy Logo" class="logo-img" />
-          <span>TEMPLI<span>fyy</span></span>
-        </div>
-        <nav class="nav-links">
-          <a href="template.html">Templates</a>
-          <a href="contact.html">Contact</a>
-        </nav>
+    <nav id="nav">
+      <div class="nav-left">
+        <a href="#" class="nl">
+          <!-- Logo from local file: logo.png -->
+          <img
+            src="logo.png"
+            alt="TEMPLIFYY"
+            id="nl-img"
+            onerror="
+              this.style.display = 'none';
+              document.getElementById('nl-fb').style.display = 'block';
+            "
+          />
+          <span id="nl-fb" class="nl-fb" style="display: none">TEMPLIFYY</span>
+        </a>
       </div>
-    </header>
+      <div class="nv" id="nav-links">
+        <a href="template.html">Products</a>
+        <a href="#who">Who It's For</a>
+        <a href="#process">How It Works</a>
+        <!-- <a href="#pricing">Pricing</a>
+        <a href="#coming">Roadmap</a> -->
+      </div>
+      <div class="nav-actions">
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle theme"
+        >
+          <span class="tt-sun">☀️</span><span class="tt-moon">🌙</span>
+        </button>
+        <a href="main.html" class="nc">Get Started ↗</a>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#products">Products</a><a href="#who">Who It's For</a>
+      <a href="#process">How It Works</a>
+      <!-- <a href="#pricing">Pricing</a>
+      <a href="#coming">Roadmap</a> -->
+      <a href="main.html" class="mm-cta">Get Started ↗</a>
+    </div>
 
-    <!-- Clean Minimal Hero Section -->
     <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Build Your <span>Professional Identity</span> Online</h1>
-          <!-- <p class="hero-subtitle">Notion, Google Sheets, Websites & SaaS Products</p> -->
-          <p class="hero-description">
-            Career Acceleration Platform for Indian Students & Creators
-          </p>
-
-          <div class="template-types">
-          <div class="type-badge">
-            <i class="fas fa-file-alt"></i> Resume Systems
+      <div>
+        <div class="hbadge">
+          <span class="dot"></span>15+ Professional Templates — Live Now
+        </div>
+        <h1>
+          YOUR<br />CAREER<br />DESERVES<br /><span class="lime">BETTER.</span>
+        </h1>
+        <p class="hsub">
+          Stop getting ignored. Start landing interviews, closing clients, and
+          winning brand deals with documents that command attention.
+        </p>
+        <div class="hbtns">
+          <a href="template.html" class="btn-ac">Explore Tools ↗</a>
+          <a href="#who" class="btn-gh">Who It's For</a>
+        </div>
+        <div class="hstats">
+          <div>
+            <div class="hs-n">250<span class="a">+</span></div>
+            <div class="hs-l">Active Users</div>
           </div>
-
-          <div class="type-badge">
-            <i class="fas fa-user-tie"></i> Portfolio Frameworks
+          <div>
+            <div class="hs-n">15<span class="a">+</span></div>
+            <div class="hs-l">Templates</div>
           </div>
-
-          <div class="type-badge">
-            <i class="fab fa-linkedin"></i> LinkedIn Optimization
+          <div>
+            <div class="hs-n">4.7<span class="a">★</span></div>
+            <div class="hs-l">Avg Rating</div>
           </div>
-
-          <div class="type-badge">
-            <i class="fas fa-rocket"></i> Career Growth Tools
+        </div>
+      </div>
+      <div class="hright">
+        <div class="dcard dc-b2">
+          <div class="dbar">
+            <div class="ddots"><span></span><span></span><span></span></div>
+          </div>
+          <div class="dbody">
+            <div class="dl"></div>
+            <div class="dl w70"></div>
+            <div class="dl w80"></div>
+          </div>
+        </div>
+        <div class="dcard dc-b1">
+          <div class="dbar">
+            <div class="ddots"><span></span><span></span><span></span></div>
+          </div>
+          <div class="dbody">
+            <div class="dtag">Contract</div>
+            <div class="dname">Service Agreement</div>
+            <div class="dl"></div>
+            <div class="dl w70"></div>
+            <div class="dl w80"></div>
+          </div>
+        </div>
+        <div class="dcard dc-main">
+          <div class="dbar">
+            <div class="ddots"><span></span><span></span><span></span></div>
+            <div class="durl">app.provault.io/resume</div>
+          </div>
+          <div class="dbody">
+            <div class="dtag">Resume</div>
+            <div class="dname">Senior Product Designer</div>
+            <div class="drole">Sneha Patel · Mumbai</div>
+            <div class="ddiv"></div>
+            <div class="dl la"></div>
+            <div class="dl"></div>
+            <div class="dl w70"></div>
+            <div class="dl w80"></div>
+            <div class="dl w55"></div>
+            <div class="dchips">
+              <span class="dchip">ATS-Ready</span
+              ><span
+                class="dchip"
+                style="background: rgba(52, 211, 153, 0.08); color: #34d399"
+                >PDF Export</span
+              >
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="search-container">
-            <div class="search-bar">
-              <input
-                type="text"
-                class="search-input"
-                id="searchInput"
-                placeholder="Search templates by type, category, or feature..."
-              />
-              <button class="search-button" id="searchButton">
-                <i class="fas fa-search"></i> Search
-              </button>
+    <div class="ticker">
+      <div class="ttrack">
+        <span class="titem">Resume Templates<span class="tdot"></span></span
+        ><span class="titem">Cover Letters<span class="tdot"></span></span
+        ><span class="titem">Freelance Contracts<span class="tdot"></span></span
+        ><span class="titem">Invoice Templates<span class="tdot"></span></span
+        ><span class="titem">Media Kits<span class="tdot"></span></span
+        ><span class="titem">Brand Decks<span class="tdot"></span></span
+        ><span class="titem">LinkedIn Profiles<span class="tdot"></span></span
+        ><span class="titem">Rate Cards<span class="tdot"></span></span
+        ><span class="titem">Proposals<span class="tdot"></span></span
+        ><span class="titem">Analytics Reports<span class="tdot"></span></span>
+        <span class="titem">Resume Templates<span class="tdot"></span></span
+        ><span class="titem">Cover Letters<span class="tdot"></span></span
+        ><span class="titem">Freelance Contracts<span class="tdot"></span></span
+        ><span class="titem">Invoice Templates<span class="tdot"></span></span
+        ><span class="titem">Media Kits<span class="tdot"></span></span
+        ><span class="titem">Brand Decks<span class="tdot"></span></span
+        ><span class="titem">LinkedIn Profiles<span class="tdot"></span></span
+        ><span class="titem">Rate Cards<span class="tdot"></span></span
+        ><span class="titem">Proposals<span class="tdot"></span></span
+        ><span class="titem">Analytics Reports<span class="tdot"></span></span>
+      </div>
+    </div>
+
+    <section id="products">
+      <div class="eyebrow rev">
+        <span class="ey-lbl">Products</span><span class="ey-line"></span>
+      </div>
+      <div class="prod-head rev d1">
+        <h2 class="ph">
+          THE FULL STACK<br />FOR EVERY<br />CAREER MOVE.<span
+            >six tools · one platform</span
+          >
+        </h2>
+        <p class="prod-note">
+          Corporate, freelance, creator — each tool designed to make you look
+          exactly right.
+        </p>
+      </div>
+      <div class="plist rev d2">
+        <div class="pi">
+          <div class="pinum">01</div>
+          <div>
+            <div class="pitags">
+              <span class="pitag ptcorp">Corporate</span>
             </div>
-          </div>
-
-          <div class="cta-buttons">
-            <a href="template.html" class="cta-button">
-              <i class="fas fa-rocket"></i> Browse All Templates
-            </a>
-            <a href="#premium-templates" class="cta-button cta-secondary">
-              <i class="fas fa-eye"></i> View Premium Templates
-            </a>
-          </div>
-
-          <div class="hero-stats">
-  
-        <div class="stat-item">
-        <div class="stat-number">Better</div>
-        <div class="stat-label">Resume Positioning</div>
-        </div>
-
-        <div class="stat-item">
-        <div class="stat-number">Stronger</div>
-        <div class="stat-label">Portfolio Presentation</div>
-        </div>
-
-        <div class="stat-item">
-        <div class="stat-number">Clear</div>
-        <div class="stat-label">Writing Frameworks</div>
-        </div>
-
-        <div class="stat-item">
-        <div class="stat-number">Faster</div>
-        <div class="stat-label">Career Growth</div>
-        </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Premium Template Collection Section -->
-    <section id="premium-templates" class="template-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Premium <span>Template</span> Collection</h2>
-          <p>
-            Handcrafted templates designed for performance, aesthetics, and
-            real-world productivity.
-          </p>
-        </div>
-
-        <div class="template-grid" id="premiumTemplatesGrid">
-          <!-- Premium templates will be loaded dynamically from JavaScript -->
-          <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Loading premium templates...</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trending Now Section -->
-    <section id="trending-now" class="template-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Trending <span>Now</span></h2>
-          <p>
-            The most popular templates right now. See what others are choosing.
-          </p>
-        </div>
-
-        <div class="template-grid" id="trendingNowGrid">
-          <!-- Trending templates will be loaded dynamically from JavaScript -->
-          <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Loading trending templates...</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Best Sellers Section -->
-    <section id="best-sellers" class="template-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Best <span>Sellers</span></h2>
-          <p>
-            Our top-performing templates trusted by thousands of users.
-          </p>
-        </div>
-
-        <div class="template-grid" id="bestSellersGrid">
-          <!-- Best seller templates will be loaded dynamically from JavaScript -->
-          <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Loading best sellers...</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- New Arrivals Section -->
-    <section id="new-arrivals" class="template-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>New <span>Arrivals</span></h2>
-          <p>
-            Discover our latest template additions, fresh and ready for your
-            projects.
-          </p>
-        </div>
-
-        <div class="template-grid" id="newArrivalsGrid">
-          <!-- New arrival templates will be loaded dynamically from JavaScript -->
-          <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Loading new arrivals...</p>
-          </div>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Editor's Picks Section -->
-    <section id="editor-picks" class="template-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Editor's <span>Picks</span></h2>
-          <p>
-            Handpicked templates curated by our team for quality and innovation.
-          </p>
-        </div>
-
-        <div class="template-grid" id="editorPicksGrid">
-          <!-- Editor's picks will be loaded dynamically from JavaScript -->
-          <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Loading editor's picks...</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-      <div class="testimonials-container">
-        <div class="section-header">
-          <h2>Trusted by <span>Professionals</span> Worldwide</h2>
-          <p>
-            See how our templates are transforming workflows and businesses.
-          </p>
-        </div>
-
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <p class="testimonial-text">
-              "I bought this portfolio template from Templify to create
-              something professional and unique—it exceeded my expectations!
-              Even my interviewer praised my site. Highly recommend it to anyone
-              who wants their portfolio to stand out."
+            <div class="piname">RESUME BUILDER PRO</div>
+            <p class="pidesc">
+              ATS-optimized templates that actually land interviews — not
+              rejection emails.
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">OM</div>
-              <div class="author-info">
-                <h4>Om Raj Singh</h4>
-                <p>IIT Bhilai Student</p>
-              </div>
+          </div>
+          <div class="piarr">→</div>
+        </div>
+        <div class="pi">
+          <div class="pinum">02</div>
+          <div>
+            <div class="pitags">
+              <span class="pitag ptcorp">Corporate</span>
+            </div>
+            <div class="piname">COVER LETTER KIT</div>
+            <p class="pidesc">
+              Position-specific templates that open doors at every career stage.
+            </p>
+          </div>
+          <div class="piarr">→</div>
+        </div>
+        <div class="pi">
+          <div class="pinum">03</div>
+          <div>
+            <div class="pitags">
+              <span class="pitag ptcorp">Corporate</span>
+            </div>
+            <div class="piname">LINKEDIN OPTIMIZER</div>
+            <p class="pidesc">
+              Profile copy that turns recruiters into inbound messages.
+            </p>
+          </div>
+          <div class="piarr">→</div>
+        </div>
+        <div class="pi">
+          <div class="pinum">04</div>
+          <div>
+            <div class="pitags">
+              <span class="pitag ptfree">Freelancer</span>
+            </div>
+            <div class="piname">CONTRACT BUNDLE</div>
+            <p class="pidesc">
+              Lawyer-reviewed agreements that protect your income and stop scope
+              creep.
+            </p>
+          </div>
+          <div class="piarr">→</div>
+        </div>
+        <div class="pi">
+          <div class="pinum">05</div>
+          <div>
+            <div class="pitags">
+              <span class="pitag ptfree">Freelancer</span>
+            </div>
+            <div class="piname">INVOICE TEMPLATES</div>
+            <p class="pidesc">
+              Professional invoices that get you paid faster — with your
+              branding.
+            </p>
+          </div>
+          <div class="piarr">→</div>
+        </div>
+        <div class="pi">
+          <div class="pinum">06</div>
+          <div>
+            <div class="pitags">
+              <span class="pitag ptcreate">Creator</span>
+            </div>
+            <div class="piname">CREATOR STARTER PACK</div>
+            <p class="pidesc">
+              Media kits, brand decks, and rate cards that land brand deals at
+              your worth.
+            </p>
+          </div>
+          <div class="piarr">→</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="who">
+      <div class="eyebrow rev">
+        <span class="ey-lbl">Who It's For</span><span class="ey-line"></span>
+      </div>
+      <div class="wrows rev d1">
+        <div class="wrow">
+          <div class="wrn">01</div>
+          <div>
+            <div class="wrlabel">For Professionals</div>
+            <div class="wrtitle">CORPORATE CLIMBERS</div>
+            <p class="wrdesc">
+              Land more interviews and get promoted faster. ATS-optimized
+              resumes, cover letters that get read, and LinkedIn profiles
+              recruiters actually respond to.
+            </p>
+          </div>
+          <div class="wrchips">
+            <div class="wrc">Resume Builder</div>
+            <div class="wrc">Cover Letter Kit</div>
+            <div class="wrc">LinkedIn Templates</div>
+            <div class="wrc">Interview Prep</div>
+          </div>
+        </div>
+        <div class="wrow">
+          <div class="wrn">02</div>
+          <div>
+            <div class="wrlabel">For Independents</div>
+            <div class="wrtitle">FREELANCERS</div>
+            <p class="wrdesc">
+              Run a tight, professional operation. Contracts that protect you,
+              proposals that win clients, invoices that get paid — no lawyer on
+              speed-dial required.
+            </p>
+          </div>
+          <div class="wrchips">
+            <div class="wrc">Service Contracts</div>
+            <div class="wrc">Project Proposals</div>
+            <div class="wrc">Invoice Templates</div>
+            <div class="wrc">Client Onboarding</div>
+          </div>
+        </div>
+        <div class="wrow">
+          <div class="wrn">03</div>
+          <div>
+            <div class="wrlabel">For Builders</div>
+            <div class="wrtitle">CONTENT CREATORS</div>
+            <p class="wrdesc">
+              Pitch brands with authority. Media kits that command rooms, rate
+              cards that set the right price, collab decks that close deals at
+              your real value.
+            </p>
+          </div>
+          <div class="wrchips">
+            <div class="wrc">Media Kit</div>
+            <div class="wrc">Brand Deck</div>
+            <div class="wrc">Rate Card</div>
+            <div class="wrc">Analytics Report</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="eyebrow rev">
+        <span class="ey-lbl">How It Works</span><span class="ey-line"></span>
+      </div>
+      <h2
+        class="rev d1"
+        style="
+          font-family: var(--D);
+          font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+          letter-spacing: 0.02em;
+          line-height: 0.9;
+          margin-bottom: 3rem;
+        "
+      >
+        PROFESSIONAL<br />IN MINUTES.
+      </h2>
+      <div class="prgrid rev d2">
+        <div class="prcell">
+          <div class="prn">STEP 01</div>
+          <div class="pricon">🎯</div>
+          <div class="prname">PICK YOUR GOAL</div>
+          <p class="prdesc">
+            Job hunting, freelancing, or building a creator brand — tell us
+            where you're headed.
+          </p>
+        </div>
+        <div class="prcell">
+          <div class="prn">STEP 02</div>
+          <div class="pricon">📂</div>
+          <div class="prname">CHOOSE TEMPLATE</div>
+          <p class="prdesc">
+            Browse 150+ templates built for your exact role, industry, and
+            career level.
+          </p>
+        </div>
+        <div class="prcell">
+          <div class="prn">STEP 03</div>
+          <div class="pricon">✏️</div>
+          <div class="prname">MAKE IT YOURS</div>
+          <p class="prdesc">
+            Fill in your details. Smart forms guide every section — no
+            blank-page anxiety.
+          </p>
+        </div>
+        <div class="prcell">
+          <div class="prn">STEP 04</div>
+          <div class="pricon">🚀</div>
+          <div class="prname">SEND AND WIN</div>
+          <p class="prdesc">
+            Export as PDF or DOCX in seconds. Ready to impress from the very
+            first send.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="coming" id="coming">
+      <div class="clayout">
+        <div>
+          <div class="eyebrow rev">
+            <span class="ey-lbl">Roadmap</span><span class="ey-line"></span>
+          </div>
+          <h2 class="ch rev d1">WHAT'S<br />COMING<br />NEXT.</h2>
+          <p class="csub rev d2">
+            We're building an AI writer, a services marketplace, and a career
+            dashboard. Join the waitlist for early access and launch discounts.
+          </p>
+          <div class="tl rev d2">
+            <div class="tld done"></div>
+            <span class="tlt">Templates</span>
+            <div class="tll"></div>
+            <div class="tld done"></div>
+            <span class="tlt">Mobile</span>
+            <div class="tll"></div>
+            <div class="tld now"></div>
+            <span class="tlt">AI Writer</span>
+            <div class="tll"></div>
+            <div class="tld"></div>
+            <span class="tlt">Marketplace</span>
+          </div>
+          <div class="wlform rev d3">
+            <input type="email" class="wlinp" placeholder="your@email.com" />
+            <a href="#" class="btn-ac">Join Waitlist</a>
+          </div>
+        </div>
+        <div class="cflist rev d2">
+          <div class="cf">
+            <div class="cficon">🤖</div>
+            <div>
+              <div class="cft">AI Resume Writer</div>
+              <p class="cfd">
+                Describe your experience in plain language — get back
+                ATS-perfect bullet points in seconds.
+              </p>
+            </div>
+            <span class="cfsoon">Q3 2025</span>
+          </div>
+          <div class="cf">
+            <div class="cficon">🛒</div>
+            <div>
+              <div class="cft">Services Marketplace</div>
+              <p class="cfd">
+                Hire vetted resume writers, designers and copywriters — or list
+                your own services.
+              </p>
+            </div>
+            <span class="cfsoon">Q4 2025</span>
+          </div>
+          <div class="cf">
+            <div class="cficon">📊</div>
+            <div>
+              <div class="cft">Career Dashboard</div>
+              <p class="cfd">
+                Track every application, set follow-up reminders, and measure
+                your job search in one clean view.
+              </p>
+            </div>
+            <span class="cfsoon">2026</span>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section>
+      <div class="eyebrow rev">
+        <span class="ey-lbl">Testimonials</span><span class="ey-line"></span>
+      </div>
+      <h2
+        class="rev d1"
+        style="
+          font-family: var(--D);
+          font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+          letter-spacing: 0.02em;
+          line-height: 0.9;
+          margin-bottom: 3rem;
+        "
+      >
+        PROOF<br />IT WORKS.
+      </h2>
+      <div class="tgrid rev d2">
+        <div class="tcell">
+          <div class="tstars">
+            <span class="tstar"></span><span class="tstar"></span
+            ><span class="tstar"></span><span class="tstar"></span
+            ><span class="tstar"></span>
+          </div>
+          <p class="tq">
+            "Used the Senior Developer template and got three interviews in week
+            one. The ATS optimization is genuinely real — my response rate went
+            from near-zero to a proper flood."
+          </p>
+          <div class="tauth">
+            <div class="tav">AR</div>
+            <div>
+              <div class="tname">Arjun Reddy</div>
+              <div class="trole">Software Engineer · Bangalore</div>
             </div>
           </div>
-
-          <div class="testimonial-card">
-            <p class="testimonial-text">
-              "As a web designer, I truly appreciate the attention to detail in
-              these templates. They've made it easier for me to create
-              high-quality, professional designs and deliver outstanding results
-              to my clients faster than ever."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">R</div>
-              <div class="author-info">
-                <h4>Rohish</h4>
-                <p>Web Designer</p>
-              </div>
+        </div>
+        <div class="tcell">
+          <div class="tstars">
+            <span class="tstar"></span><span class="tstar"></span
+            ><span class="tstar"></span><span class="tstar"></span
+            ><span class="tstar"></span>
+          </div>
+          <p class="tq">
+            "The freelance contract saved me from a nightmare scope-creep
+            situation. Client tried to double the deliverables — my ProVault
+            agreement had every clause locked down."
+          </p>
+          <div class="tauth">
+            <div class="tav">PM</div>
+            <div>
+              <div class="tname">Priya Mehta</div>
+              <div class="trole">UX Freelancer · Mumbai</div>
             </div>
           </div>
-
-          <div class="testimonial-card">
-            <p class="testimonial-text">
-              "The templates are not only beautiful but also thoughtfully
-              structured. Thanks to their clean design and easy customization,
-              my startup was able to launch a fully functional,
-              professional-looking website in just three days."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">SK</div>
-              <div class="author-info">
-                <h4>Shreyash Khedekar</h4>
-                <p>Startup Founder</p>
-              </div>
+        </div>
+        <div class="tcell">
+          <div class="tstars">
+            <span class="tstar"></span><span class="tstar"></span
+            ><span class="tstar"></span><span class="tstar"></span
+            ><span class="tstar"></span>
+          </div>
+          <p class="tq">
+            "My ProVault media kit landed my first major brand deal. It looked
+            ten times more professional than what I was sending before — the
+            brand noticed within 24 hours."
+          </p>
+          <div class="tauth">
+            <div class="tav">RK</div>
+            <div>
+              <div class="tname">Ritika Kapoor</div>
+              <div class="trole">Content Creator · Delhi</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-column footer-about">
-            <h3>TEMPLIfy</h3>
-            <p>
-              Premium website templates for modern businesses and creatives. We
-              help you launch faster and stand out from the crowd.
-            </p>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+    <!-- <section id="pricing">
+      <div class="eyebrow rev">
+        <span class="ey-lbl">Pricing</span><span class="ey-line"></span>
+      </div>
+      <h2
+        class="rev d1"
+        style="
+          font-family: var(--D);
+          font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+          letter-spacing: 0.02em;
+          line-height: 0.9;
+          margin-bottom: 3rem;
+        "
+      >
+        TRANSPARENT.<br />NO SURPRISES.
+      </h2>
+      <div class="pgrid rev d2">
+        <div class="pcell">
+          <div class="ptier">Starter</div>
+          <div class="pname">FREE</div>
+          <div class="pamount">
+            <span class="pcur">₹</span><span class="pnum">0</span
+            ><span class="pmo">forever</span>
           </div>
-
-          <div class="footer-column">
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-              <li><a href="template.html">Templates</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="#">License</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h3>Categories</h3>
-            <ul class="footer-links">
-              <li><a href="#">Business</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">E-commerce</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h3>Contact</h3>
-            <ul class="footer-links">
-              <li>Email: contacttemplifyy@gmail.com</li>
-              <li>Bangalore, India</li>
-            </ul>
-          </div>
+          <ul class="pfeats">
+            <li><span class="ck">✓</span>3 resume templates</li>
+            <li><span class="ck">✓</span>1 cover letter template</li>
+            <li><span class="ck">✓</span>PDF export</li>
+            <li class="off"><span class="ck"></span>Freelance documents</li>
+            <li class="off"><span class="ck"></span>Creator kit</li>
+          </ul>
+          <button class="pbtn pbtn-o">Get started free</button>
         </div>
+        <div class="pcell pop">
+          <span class="poptag">Most Popular</span>
+          <div class="ptier">Professional</div>
+          <div class="pname">PRO</div>
+          <div class="pamount">
+            <span class="pcur">₹</span><span class="pnum">499</span
+            ><span class="pmo">/month</span>
+          </div>
+          <ul class="pfeats">
+            <li><span class="ck">✓</span>All 150+ templates</li>
+            <li><span class="ck">✓</span>PDF & DOCX export</li>
+            <li><span class="ck">✓</span>Full freelance bundle</li>
+            <li><span class="ck">✓</span>Creator kit included</li>
+            <li><span class="ck">✓</span>Priority support</li>
+          </ul>
+          <button class="pbtn pbtn-a">Start Pro plan</button>
+        </div>
+        <div class="pcell">
+          <div class="ptier">Lifetime</div>
+          <div class="pname">FOREVER</div>
+          <div class="pamount">
+            <span class="pcur">₹</span><span class="pnum">2499</span
+            ><span class="pmo">one-time</span>
+          </div>
+          <ul class="pfeats">
+            <li><span class="ck">✓</span>Everything in Pro</li>
+            <li><span class="ck">✓</span>Lifetime updates</li>
+            <li><span class="ck">✓</span>Early access to all new tools</li>
+            <li><span class="ck">✓</span>AI tools on launch</li>
+            <li><span class="ck">✓</span>VIP support</li>
+          </ul>
+          <button class="pbtn pbtn-o">Buy lifetime access</button>
+        </div>
+      </div>
+    </section> -->
 
-        <div class="copyright">
-          <p>&copy; 2026 TEMPLIfy. All rights reserved.</p>
+    <div class="ctaband rev">
+      <div>
+        <div class="cbh">READY TO LOOK THE PART?</div>
+        <p class="cbsub">
+          Join 12,000+ professionals who trust ProVault with their next big
+          move.
+        </p>
+      </div>
+      <a href="#pricing" class="cbbtn">Start Free ↗</a>
+    </div>
+
+    <footer>
+      <div class="fgrid">
+        <div>
+          <div class="fblogo">
+            <img
+              src="logo.png"
+              alt="ProVault"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'block';
+              "
+            />
+            <div class="fblogo-text" style="display: none">PROVAULT</div>
+          </div>
+          <p class="fbp">
+            Professional tools for corporate climbers, freelancers, and
+            creators. Your next opportunity starts with the right document.
+          </p>
+        </div>
+        <div class="fcol">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#">Resume Builder</a></li>
+            <li><a href="#">Cover Letter Kit</a></li>
+            <li><a href="#">Freelance Bundle</a></li>
+            <li><a href="#">Creator Pack</a></li>
+            <li><a href="#">Invoice Templates</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fbot">
+        <p>© 2025 ProVault. Built for India's professionals. 🇮🇳</p>
+        <div class="fsocs">
+          <div class="soc">𝕏</div>
+          <div class="soc">in</div>
+          <div class="soc">▶</div>
+          <div class="soc">📷</div>
         </div>
       </div>
     </footer>
 
-    <script src="index.js"></script>
+    <script>
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".rev").forEach(function (el) {
+        io.observe(el);
+      });
+
+      addEventListener("scroll", function () {
+        document.getElementById("nav").style.borderBottomColor =
+          scrollY > 25
+            ? getComputedStyle(document.documentElement)
+                .getPropertyValue("--bd2")
+                .trim()
+            : getComputedStyle(document.documentElement)
+                .getPropertyValue("--bd")
+                .trim();
+      });
+
+      (function () {
+        var html = document.documentElement;
+        var toggle = document.getElementById("theme-toggle");
+        var saved = localStorage.getItem("provault-theme");
+        if (saved === "light") html.setAttribute("data-theme", "light");
+        else if (saved === "dark") html.setAttribute("data-theme", "dark");
+        else if (
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: light)").matches
+        )
+          html.setAttribute("data-theme", "light");
+        toggle.addEventListener("click", function () {
+          var next =
+            html.getAttribute("data-theme") === "light" ? "dark" : "light";
+          html.setAttribute("data-theme", next);
+          localStorage.setItem("provault-theme", next);
+        });
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", function (e) {
+            if (!localStorage.getItem("provault-theme"))
+              html.setAttribute("data-theme", e.matches ? "dark" : "light");
+          });
+      })();
+
+      (function () {
+        var hamburger = document.getElementById("hamburger");
+        var mobileMenu = document.getElementById("mobile-menu");
+        var menuLinks = mobileMenu.querySelectorAll("a");
+        var isOpen = false;
+        function closeMenu() {
+          isOpen = false;
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("open");
+          document.body.style.overflow = "";
+        }
+        function openMenu() {
+          isOpen = true;
+          hamburger.classList.add("active");
+          mobileMenu.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+        hamburger.addEventListener("click", function () {
+          if (isOpen) closeMenu();
+          else openMenu();
+        });
+        menuLinks.forEach(function (link) {
+          link.addEventListener("click", closeMenu);
+        });
+        document.addEventListener("click", function (e) {
+          if (
+            isOpen &&
+            !mobileMenu.contains(e.target) &&
+            !hamburger.contains(e.target)
+          )
+            closeMenu();
+        });
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 768 && isOpen) closeMenu();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && isOpen) closeMenu();
+        });
+      })();
+    </script>
   </body>
 </html>
