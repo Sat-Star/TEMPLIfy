@@ -1,18 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
+    <meta charset="UTF-8" />
     <meta
       name="google-site-verification"
       content="SbcNErI1xV0IxhX7FzVj-lKcn1f4q68clEfJHM6wM6E"
     />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>TEMPLIfyy | Premium Digital Templates</title>
     <link rel="icon" type="image/png" href="logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -22,111 +25,120 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <div class="container header-content">
-        <div class="logo">
-          <!-- Updated: Logo is now circular without border -->
-          <img src="logo.png" alt="TEMPLIfy Logo" class="logo-img" />
-          <span>TEMPLI<span>fyy</span></span>
-        </div>
-        <nav class="nav-links">
-          <a href="template.html">Templates</a>
-          <a href="contact.html">Contact</a>
-        </nav>
+    <nav id="nav">
+      <div class="nav-left">
+        <a href="#" class="nl"
+          ><img src="logo.png" alt="TEMPLIfyy" /><span class="nl-fb"
+            >TEMPLIfyy</span
+          ></a
+        >
       </div>
-    </header>
+      <div class="nv" id="nav-links">
+        <a href="template.html">Templates</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle theme"
+        >
+          <span class="tt-sun">☀️</span><span class="tt-moon">🌙</span></button
+        ><a href="template.html" class="nc">Get Started ↗</a
+        ><button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="template.html">Templates</a><a href="contact.html">Contact</a
+      ><a
+        href="template.html"
+        style="background: var(--ac); color: #000; text-align: center"
+        >Get Started</a
+      >
+    </div>
 
-    <!-- Clean Minimal Hero Section -->
+    <!-- MINIMAL UNIQUE HERO (consistent theme, no card stack) -->
     <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Build Your <span>Professional Identity</span> Online</h1>
-          <!-- <p class="hero-subtitle">Notion, Google Sheets, Websites & SaaS Products</p> -->
-          <p class="hero-description">
-            Career Acceleration Platform for Indian Students & Creators
-          </p>
-
-          <div class="template-types">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-bolt"></i> 150+ premium templates
+        </div>
+        <h1>Build your <span>professional</span> edge</h1>
+        <p class="hero-sub">
+          Resumes, portfolios, freelance contracts & creator kits — designed to
+          land interviews, win clients, and grow faster.
+        </p>
+        <div class="type-badges">
           <div class="type-badge">
             <i class="fas fa-file-alt"></i> Resume Systems
           </div>
-
           <div class="type-badge">
             <i class="fas fa-user-tie"></i> Portfolio Frameworks
           </div>
-
           <div class="type-badge">
-            <i class="fab fa-linkedin"></i> LinkedIn Optimization
+            <i class="fab fa-linkedin"></i> LinkedIn Optimizer
           </div>
-
           <div class="type-badge">
-            <i class="fas fa-rocket"></i> Career Growth Tools
-            </div>
+            <i class="fas fa-file-signature"></i> Cover Letters
           </div>
-
-          <div class="search-container">
-            <div class="search-bar">
-              <input
-                type="text"
-                class="search-input"
-                id="searchInput"
-                placeholder="Search templates by type, category, or feature..."
-              />
-              <button class="search-button" id="searchButton">
-                <i class="fas fa-search"></i> Search
-              </button>
-            </div>
+        </div>
+        <div class="search-container">
+          <div class="search-bar">
+            <input
+              type="text"
+              class="search-input"
+              id="searchInput"
+              placeholder="Search templates... e.g., notion, resume, freelance"
+            />
+            <button class="search-button" id="searchButton">
+              <i class="fas fa-search"></i> Search
+            </button>
           </div>
-
-          <div class="cta-buttons">
-            <a href="template.html" class="cta-button">
-              <i class="fas fa-rocket"></i> Browse All Templates
-            </a>
-            <a href="#premium-templates" class="cta-button cta-secondary">
-              <i class="fas fa-eye"></i> View Premium Templates
-            </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Templates</div>
           </div>
-
-          <div class="hero-stats">
-  
-        <div class="stat-item">
-        <div class="stat-number">Better</div>
-        <div class="stat-label">Resume Positioning</div>
-        </div>
-
-        <div class="stat-item">
-        <div class="stat-number">Stronger</div>
-        <div class="stat-label">Portfolio Presentation</div>
-        </div>
-
-        <div class="stat-item">
-        <div class="stat-number">Clear</div>
-        <div class="stat-label">Writing Frameworks</div>
-        </div>
-
-        <div class="stat-item">
-        <div class="stat-number">Faster</div>
-        <div class="stat-label">Career Growth</div>
-        </div>
+          <div class="stat-item">
+            <div class="stat-number">250K+</div>
+            <div class="stat-label">Active users</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4.9★</div>
+            <div class="stat-label">Avg rating</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Premium Template Collection Section -->
+    <div class="ticker">
+      <div class="ttrack">
+        <span class="titem">Resume Templates<span class="tdot"></span></span
+        ><span class="titem">Cover Letters<span class="tdot"></span></span
+        ><span class="titem">Freelance Contracts<span class="tdot"></span></span
+        ><span class="titem">Invoice Templates<span class="tdot"></span></span
+        ><span class="titem">Media Kits<span class="tdot"></span></span
+        ><span class="titem">Brand Decks<span class="tdot"></span></span
+        ><span class="titem">LinkedIn Profiles<span class="tdot"></span></span
+        ><span class="titem">Rate Cards<span class="tdot"></span></span
+        ><span class="titem">Proposals<span class="tdot"></span></span>
+        <span class="titem">Resume Templates<span class="tdot"></span></span
+        ><span class="titem">Cover Letters<span class="tdot"></span></span
+        ><span class="titem"
+          >Freelance Contracts<span class="tdot"></span
+        ></span>
+      </div>
+    </div>
+
     <section id="premium-templates" class="template-section">
       <div class="container">
         <div class="section-header">
-          <h2>Premium <span>Template</span> Collection</h2>
-          <p>
-            Handcrafted templates designed for performance, aesthetics, and
-            real-world productivity.
-          </p>
+          <h2>Premium <span>Collection</span></h2>
+          <p>Handcrafted for performance and real-world productivity</p>
         </div>
-
         <div class="template-grid" id="premiumTemplatesGrid">
-          <!-- Premium templates will be loaded dynamically from JavaScript -->
           <div class="loading-spinner">
             <div class="spinner"></div>
             <p>Loading premium templates...</p>
@@ -134,39 +146,27 @@
         </div>
       </div>
     </section>
-
-    <!-- Trending Now Section -->
     <section id="trending-now" class="template-section">
       <div class="container">
         <div class="section-header">
           <h2>Trending <span>Now</span></h2>
-          <p>
-            The most popular templates right now. See what others are choosing.
-          </p>
+          <p>Most popular right now</p>
         </div>
-
         <div class="template-grid" id="trendingNowGrid">
-          <!-- Trending templates will be loaded dynamically from JavaScript -->
           <div class="loading-spinner">
             <div class="spinner"></div>
-            <p>Loading trending templates...</p>
+            <p>Loading trending...</p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Best Sellers Section -->
     <section id="best-sellers" class="template-section">
       <div class="container">
         <div class="section-header">
           <h2>Best <span>Sellers</span></h2>
-          <p>
-            Our top-performing templates trusted by thousands of users.
-          </p>
+          <p>Trusted by thousands</p>
         </div>
-
         <div class="template-grid" id="bestSellersGrid">
-          <!-- Best seller templates will be loaded dynamically from JavaScript -->
           <div class="loading-spinner">
             <div class="spinner"></div>
             <p>Loading best sellers...</p>
@@ -174,41 +174,27 @@
         </div>
       </div>
     </section>
-
-    <!-- New Arrivals Section -->
     <section id="new-arrivals" class="template-section">
       <div class="container">
         <div class="section-header">
           <h2>New <span>Arrivals</span></h2>
-          <p>
-            Discover our latest template additions, fresh and ready for your
-            projects.
-          </p>
+          <p>Fresh templates just added</p>
         </div>
-
         <div class="template-grid" id="newArrivalsGrid">
-          <!-- New arrival templates will be loaded dynamically from JavaScript -->
           <div class="loading-spinner">
             <div class="spinner"></div>
             <p>Loading new arrivals...</p>
           </div>
         </div>
-        </div>
       </div>
     </section>
-
-    <!-- Editor's Picks Section -->
     <section id="editor-picks" class="template-section">
       <div class="container">
         <div class="section-header">
           <h2>Editor's <span>Picks</span></h2>
-          <p>
-            Handpicked templates curated by our team for quality and innovation.
-          </p>
+          <p>Curated by our team</p>
         </div>
-
         <div class="template-grid" id="editorPicksGrid">
-          <!-- Editor's picks will be loaded dynamically from JavaScript -->
           <div class="loading-spinner">
             <div class="spinner"></div>
             <p>Loading editor's picks...</p>
@@ -217,121 +203,167 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-      <div class="testimonials-container">
+    <div class="testimonials">
+      <div class="container">
         <div class="section-header">
-          <h2>Trusted by <span>Professionals</span> Worldwide</h2>
-          <p>
-            See how our templates are transforming workflows and businesses.
-          </p>
+          <h2>Trusted by <span>professionals</span></h2>
+          <p>Real results from real people</p>
         </div>
-
         <div class="testimonials-grid">
           <div class="testimonial-card">
             <p class="testimonial-text">
-              "I bought this portfolio template from Templify to create
-              something professional and unique—it exceeded my expectations!
-              Even my interviewer praised my site. Highly recommend it to anyone
-              who wants their portfolio to stand out."
+              "I bought this portfolio template from Templify - my interviewer
+              praised my site. Highly recommend!"
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">OM</div>
-              <div class="author-info">
+              <div>
                 <h4>Om Raj Singh</h4>
                 <p>IIT Bhilai Student</p>
               </div>
             </div>
           </div>
-
           <div class="testimonial-card">
             <p class="testimonial-text">
-              "As a web designer, I truly appreciate the attention to detail in
-              these templates. They've made it easier for me to create
-              high-quality, professional designs and deliver outstanding results
-              to my clients faster than ever."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">R</div>
-              <div class="author-info">
-                <h4>Rohish</h4>
-                <p>Web Designer</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <p class="testimonial-text">
-              "The templates are not only beautiful but also thoughtfully
-              structured. Thanks to their clean design and easy customization,
-              my startup was able to launch a fully functional,
-              professional-looking website in just three days."
+              "The freelance contract saved me from scope creep. Clean design
+              and easy customization."
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">SK</div>
-              <div class="author-info">
+              <div>
                 <h4>Shreyash Khedekar</h4>
                 <p>Startup Founder</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-column footer-about">
-            <h3>TEMPLIfy</h3>
-            <p>
-              Premium website templates for modern businesses and creatives. We
-              help you launch faster and stand out from the crowd.
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Attention to detail is incredible. My startup launched a
+              professional site in three days."
             </p>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <div class="testimonial-author">
+              <div class="author-avatar">R</div>
+              <div>
+                <h4>Rohish</h4>
+                <p>Web Designer</p>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <div class="footer-column">
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-              <li><a href="template.html">Templates</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="#">License</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h3>Categories</h3>
-            <ul class="footer-links">
-              <li><a href="#">Business</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">E-commerce</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h3>Contact</h3>
-            <ul class="footer-links">
-              <li>Email: contacttemplifyy@gmail.com</li>
-              <li>Bangalore, India</li>
-            </ul>
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h4>TEMPLIfyy</h4>
+          <p style="font-size: 0.8rem; color: var(--mu); max-width: 260px">
+            Premium website templates for modern businesses and creatives.
+          </p>
+          <div class="social-links">
+            <a href="#" class="soc"><i class="fab fa-twitter"></i></a
+            ><a href="#" class="soc"><i class="fab fa-instagram"></i></a
+            ><a href="#" class="soc"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-
-        <div class="copyright">
-          <p>&copy; 2026 TEMPLIfy. All rights reserved.</p>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="template.html">Templates</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">License</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
         </div>
+        <div class="footer-column">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#">Resume</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Freelance</a></li>
+            <li><a href="#">Creator Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li>contacttemplifyy@gmail.com</li>
+            <li>Bangalore, India</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 TEMPLIfyy. All rights reserved.</p>
       </div>
     </footer>
 
     <script src="main.js"></script>
+    <script>
+      (function () {
+        const html = document.documentElement;
+        const toggle = document.getElementById("theme-toggle");
+        const saved = localStorage.getItem("templify-theme");
+        if (saved === "light") html.setAttribute("data-theme", "light");
+        else if (saved === "dark") html.setAttribute("data-theme", "dark");
+        else if (window.matchMedia("(prefers-color-scheme: light)").matches)
+          html.setAttribute("data-theme", "light");
+        if (toggle) {
+          toggle.addEventListener("click", () => {
+            const next =
+              html.getAttribute("data-theme") === "light" ? "dark" : "light";
+            html.setAttribute("data-theme", next);
+            localStorage.setItem("templify-theme", next);
+          });
+        }
+      })();
+      (function () {
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobile-menu");
+        let isOpen = false;
+        function closeMenu() {
+          isOpen = false;
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("open");
+          document.body.style.overflow = "";
+        }
+        function openMenu() {
+          isOpen = true;
+          hamburger.classList.add("active");
+          mobileMenu.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+        if (hamburger) {
+          hamburger.addEventListener("click", () => {
+            isOpen ? closeMenu() : openMenu();
+          });
+          document
+            .querySelectorAll("#mobile-menu a")
+            .forEach((link) => link.addEventListener("click", closeMenu));
+          document.addEventListener("click", (e) => {
+            if (
+              isOpen &&
+              !mobileMenu.contains(e.target) &&
+              !hamburger.contains(e.target)
+            )
+              closeMenu();
+          });
+          window.addEventListener("resize", () => {
+            if (window.innerWidth > 768 && isOpen) closeMenu();
+          });
+        }
+      })();
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".rev").forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>
