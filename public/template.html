@@ -1,13 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Digital Templates | TEMPLIfy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -17,19 +20,37 @@
     <link rel="stylesheet" href="template.css" />
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <div class="container header-content">
-        <div class="logo">TEMPLI<span>fy</span></div>
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="#all-templates" class="active">Templates</a>
-          <a href="contact.html">Contact</a>
-        </nav>
+    <nav id="nav">
+      <div class="nav-left">
+        <a href="index.html" class="nl">
+          <img src="logo.png" alt="TEMPLIfyy" />
+          <span class="nl-fb">TEMPLIfyy</span>
+        </a>
       </div>
-    </header>
+      <div class="nv" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="template.html" class="active">Templates</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle theme"
+        >
+          <span class="tt-sun">☀️</span><span class="tt-moon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="template.html">Templates</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-    <!-- Hero Section - Fixed -->
     <section class="hero-section">
       <div class="container">
         <div class="hero-content">
@@ -42,7 +63,6 @@
             sheets, and documents. Streamline your projects with designs that
             work.
           </p>
-
           <div class="hero-stats">
             <div class="stat-item">
               <div class="stat-number">25+</div>
@@ -61,24 +81,28 @@
       </div>
     </section>
 
-    <!-- Categories -->
     <section class="category-section" id="all-templates">
       <div class="container">
         <div class="category-tabs" id="category-tabs">
           <button class="category-tab active" data-category-id="all">
             All Templates
           </button>
-          <!-- Categories will be dynamically inserted here -->
         </div>
-
-        <!-- Subcategories Container -->
-        <div class="subcategory-tabs" id="subcategory-tabs">
-          <!-- Subcategories will be dynamically inserted here -->
-        </div>
+        <div class="subcategory-tabs" id="subcategory-tabs"></div>
       </div>
     </section>
 
-    <!-- Products Grid -->
+    <div class="container">
+      <div class="price-filter-bar">
+        <span class="price-filter-label">Filter by:</span>
+        <button class="price-filter-chip active" data-price-filter="all">
+          All
+        </button>
+        <button class="price-filter-chip" data-price-filter="free">Free</button>
+        <button class="price-filter-chip" data-price-filter="paid">Paid</button>
+      </div>
+    </div>
+
     <section class="products-section">
       <div class="container">
         <div class="products-grid" id="all-templates-grid">
@@ -90,42 +114,145 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-column">
-            <h3>TEMPLIfy</h3>
-            <p style="color: #9ca3af; font-size: 14px; line-height: 1.6">
-              Professional templates for modern workflows. Save time and focus
-              on what matters.
-            </p>
-          </div>
-
-          <div class="footer-column">
-            <h3>Explore</h3>
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#all-templates">Templates</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h3>Connect</h3>
-            <ul class="footer-links">
-              <li>contacttemplifyy@gmail.com</li>
-              <li>Bangalore, India</li>
-            </ul>
+      <div class="footer-grid">
+        <div>
+          <h4>TEMPLIFYY</h4>
+          <p style="font-size: 0.8rem; color: var(--mu); max-width: 260px">
+            Professional templates for modern workflows. Save time and focus on
+            what matters.
+          </p>
+          <div class="social-links">
+            <a href="#" class="soc"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="soc"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="soc"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-
-        <div class="copyright">
-          <p>&copy; 2026 TEMPLIfy. All rights reserved.</p>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="template.html">Templates</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">License</a></li>
+          </ul>
         </div>
+        <div class="footer-column">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#">Resume</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Freelance</a></li>
+            <li><a href="#">Creator Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li>contacttemplifyy@gmail.com</li>
+            <li>Bangalore, India</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 TEMPLIfyy. All rights reserved.</p>
       </div>
     </footer>
 
     <script src="template.js"></script>
+    <script>
+      // Theme toggle (exactly as main.html)
+      (function () {
+        const html = document.documentElement;
+        const toggle = document.getElementById("theme-toggle");
+        const saved = localStorage.getItem("templify-theme");
+        if (saved === "light") html.setAttribute("data-theme", "light");
+        else if (saved === "dark") html.setAttribute("data-theme", "dark");
+        else if (window.matchMedia("(prefers-color-scheme: light)").matches)
+          html.setAttribute("data-theme", "light");
+        if (toggle) {
+          toggle.addEventListener("click", () => {
+            const next =
+              html.getAttribute("data-theme") === "light" ? "dark" : "light";
+            html.setAttribute("data-theme", next);
+            localStorage.setItem("templify-theme", next);
+          });
+        }
+      })();
+
+      // Hamburger menu (exactly as main.html)
+      (function () {
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobile-menu");
+        let isOpen = false;
+        function closeMenu() {
+          isOpen = false;
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("open");
+          document.body.style.overflow = "";
+        }
+        function openMenu() {
+          isOpen = true;
+          hamburger.classList.add("active");
+          mobileMenu.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+        if (hamburger) {
+          hamburger.addEventListener("click", () => {
+            isOpen ? closeMenu() : openMenu();
+          });
+          document
+            .querySelectorAll("#mobile-menu a")
+            .forEach((link) => link.addEventListener("click", closeMenu));
+          document.addEventListener("click", (e) => {
+            if (
+              isOpen &&
+              !mobileMenu.contains(e.target) &&
+              !hamburger.contains(e.target)
+            )
+              closeMenu();
+          });
+          window.addEventListener("resize", () => {
+            if (window.innerWidth > 768 && isOpen) closeMenu();
+          });
+        }
+      })();
+
+      // Free/Paid filter logic (works alongside existing category/subcategory filters)
+      (function () {
+        let currentPriceFilter = "all";
+        let originalTemplatesList = [];
+
+        const originalRender = window.renderTemplates;
+        if (originalRender) {
+          window.renderTemplates = function (templates) {
+            originalTemplatesList = templates;
+            applyPriceFilter();
+          };
+        }
+
+        function applyPriceFilter() {
+          let filtered = [...originalTemplatesList];
+          if (currentPriceFilter === "free") {
+            filtered = filtered.filter((t) => t.isFree === true);
+          } else if (currentPriceFilter === "paid") {
+            filtered = filtered.filter(
+              (t) => !t.isFree && t.price && Number(t.price) > 0,
+            );
+          }
+          if (originalRender) originalRender(filtered);
+        }
+
+        const chips = document.querySelectorAll(".price-filter-chip");
+        chips.forEach((chip) => {
+          chip.addEventListener("click", () => {
+            chips.forEach((c) => c.classList.remove("active"));
+            chip.classList.add("active");
+            currentPriceFilter = chip.getAttribute("data-price-filter");
+            applyPriceFilter();
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
