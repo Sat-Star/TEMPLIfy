@@ -1,9 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Templify Admin - Professional Dashboard</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>TEMPLIfyy Admin | Professional Dashboard</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,49 +20,41 @@
     <link rel="stylesheet" href="admin.css" />
   </head>
   <body>
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle d-md-none">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Sidebar Overlay for Mobile -->
+    <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
     <div class="sidebar-overlay"></div>
 
     <div class="container-fluid">
       <div class="row">
-        <!-- Modern Sidebar -->
         <div class="col-md-3 col-lg-2 d-md-block sidebar p-0">
           <div class="d-flex flex-column h-100">
             <div class="brand">
-              <h5>
-                <i class="fas fa-cube me-2 text-primary"></i>TEMPLIFY ADMIN
-              </h5>
+              <h5><i class="fas fa-cube"></i> TEMPLIFYY ADMIN</h5>
             </div>
             <ul class="nav flex-column flex-grow-1">
               <li class="nav-item">
-                <a class="nav-link active" href="#" id="dashboardTab">
-                  <i class="fas fa-tachometer-alt"></i>Dashboard
-                </a>
+                <a class="nav-link active" href="#" id="dashboardTab"
+                  ><i class="fas fa-tachometer-alt"></i>Dashboard</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id="templatesTab">
-                  <i class="fas fa-palette"></i>Templates
-                </a>
+                <a class="nav-link" href="#" id="templatesTab"
+                  ><i class="fas fa-palette"></i>Templates</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id="couponsTab">
-                  <i class="fas fa-ticket-alt"></i>Coupons
-                </a>
+                <a class="nav-link" href="#" id="couponsTab"
+                  ><i class="fas fa-ticket-alt"></i>Coupons</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id="analyticsTab">
-                  <i class="fas fa-chart-bar"></i>Analytics
-                </a>
+                <a class="nav-link" href="#" id="analyticsTab"
+                  ><i class="fas fa-chart-bar"></i>Analytics</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id="paymentsTab">
-                  <i class="fas fa-rupee-sign"></i>Payments
-                </a>
+                <a class="nav-link" href="#" id="paymentsTab"
+                  ><i class="fas fa-rupee-sign"></i>Sales</a
+                >
               </li>
               <li class="nav-item mt-auto">
                 <div class="p-3 border-top">
@@ -72,84 +67,85 @@
           </div>
         </div>
 
-        <!-- Main Content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          <!-- Dashboard Section -->
+          <!-- Dashboard -->
           <div id="dashboardSection">
-            <div
-              class="page-header d-flex justify-content-between align-items-center"
-            >
+            <div class="page-header">
               <h1>Dashboard Overview</h1>
-              <div class="d-flex align-items-center">
-                <span class="text-muted">
-                  <i class="fas fa-calendar me-1"></i> Aug 15, 2025
-                </span>
-              </div>
+              <span class="text-muted"
+                ><i class="fas fa-calendar me-1"></i> <span id="dashDate"></span
+              ></span>
             </div>
-
-            <div class="row">
-              <div class="col-md-4 mb-4">
+            <div class="row g-4">
+              <div class="col-md-4">
                 <div class="stat-card">
-                  <div class="card-body position-relative">
+                  <div class="card-body">
                     <div class="icon-wrapper">
                       <i class="fas fa-palette"></i>
                     </div>
                     <h5 class="card-title">Total Templates</h5>
                     <h2 id="totalTemplates" class="card-text">0</h2>
-                    <div class="mt-2 small text-muted">
-                      <span>Loading...</span>
-                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 mb-4">
+              <div class="col-md-4">
                 <div class="stat-card">
-                  <div class="card-body position-relative">
+                  <div class="card-body">
                     <div class="icon-wrapper">
                       <i class="fas fa-check-circle"></i>
                     </div>
                     <h5 class="card-title">Active Templates</h5>
                     <h2 id="activeTemplates" class="card-text">0</h2>
-                    <div class="mt-2 small text-muted">
-                      <span>Loading...</span>
-                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 mb-4">
+              <div class="col-md-4">
                 <div class="stat-card">
-                  <div class="card-body position-relative">
+                  <div class="card-body">
                     <div class="icon-wrapper">
                       <i class="fas fa-rupee-sign"></i>
                     </div>
                     <h5 class="card-title">Total Revenue</h5>
                     <h2 id="totalRevenue" class="card-text">₹0</h2>
-                    <div class="mt-2 small text-muted">
-                      <span>Loading...</span>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="row mt-4">
+            <div class="row g-4 mt-2">
               <div class="col-md-8">
-                <div class="chart-container">
+                <div
+                  class="chart-container p-4"
+                  style="
+                    background: var(--surface);
+                    border-radius: 20px;
+                    border: 1px solid var(--border);
+                  "
+                >
                   <div
                     class="d-flex justify-content-between align-items-center mb-4"
                   >
                     <h5 class="mb-0">Performance Overview</h5>
-                    <div class="btn-group btn-group-sm">
-                      <button class="btn btn-outline-secondary">Week</button>
-                      <button class="btn btn-primary">Month</button>
-                      <button class="btn btn-outline-secondary">Year</button>
+                    <div>
+                      <button class="btn btn-sm btn-outline-secondary">
+                        Week</button
+                      ><button class="btn btn-sm btn-primary mx-1">Month</button
+                      ><button class="btn btn-sm btn-outline-secondary">
+                        Year
+                      </button>
                     </div>
                   </div>
                   <canvas id="performanceChart" height="250"></canvas>
                 </div>
               </div>
               <div class="col-md-4">
-                <div class="chart-container">
+                <div
+                  class="chart-container p-4"
+                  style="
+                    background: var(--surface);
+                    border-radius: 20px;
+                    border: 1px solid var(--border);
+                  "
+                >
                   <h5 class="mb-4">Template Categories</h5>
                   <canvas id="categoryChart" height="250"></canvas>
                 </div>
@@ -158,10 +154,8 @@
           </div>
 
           <!-- Templates Section -->
-          <div id="templatesSection">
-            <div
-              class="page-header d-flex justify-content-between align-items-center"
-            >
+          <div id="templatesSection" style="display: none">
+            <div class="page-header">
               <h1>Template Management</h1>
               <button
                 class="btn btn-primary"
@@ -171,8 +165,6 @@
                 <i class="fas fa-plus me-1"></i> Add Template
               </button>
             </div>
-
-            <!-- Search and Filter -->
             <div class="search-filter-container">
               <div class="row align-items-center">
                 <div class="col-md-6 mb-3 mb-md-0">
@@ -182,48 +174,34 @@
                       id="templateSearch"
                       class="form-control"
                       placeholder="Search templates..."
-                    />
-                    <button
-                      class="btn btn-primary"
-                      type="button"
-                      id="searchButton"
-                    >
+                    /><button class="btn btn-primary" id="searchButton">
                       <i class="fas fa-search"></i>
                     </button>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="d-flex flex-wrap gap-2 justify-content-md-end">
+                  <div class="d-flex gap-2 justify-content-md-end">
                     <select class="form-select w-auto" id="statusFilter">
                       <option value="all">All Status</option>
                       <option value="active">Active</option>
                       <option value="draft">Draft</option>
                       <option value="archived">Archived</option>
                     </select>
-                    <button class="btn btn-outline-secondary">
-                      <i class="fas fa-filter"></i>
-                    </button>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- Templates Grid -->
-            <div class="row" id="templatesContainer">
-              <div class="col-12 text-center py-5">
-                <div class="spinner-border text-primary" role="status">
-                  <span class="visually-hidden">Loading templates...</span>
-                </div>
-                <p class="mt-3 text-muted">Loading templates from backend...</p>
+            <div class="template-grid" id="templatesContainer">
+              <div class="text-center py-5">
+                <div class="spinner-border text-primary"></div>
+                <p class="mt-3">Loading templates...</p>
               </div>
             </div>
           </div>
 
           <!-- Coupons Section -->
           <div id="couponsSection" style="display: none">
-            <div
-              class="page-header d-flex justify-content-between align-items-center"
-            >
+            <div class="page-header">
               <h1>Coupon Management</h1>
               <button
                 class="btn btn-primary"
@@ -233,10 +211,8 @@
                 <i class="fas fa-plus me-1"></i> Add Coupon
               </button>
             </div>
-
-            <!-- Search and Filter -->
             <div class="search-filter-container">
-              <div class="row align-items-center">
+              <div class="row">
                 <div class="col-md-6 mb-3 mb-md-0">
                   <div class="input-group">
                     <input
@@ -244,35 +220,26 @@
                       id="couponSearch"
                       class="form-control"
                       placeholder="Search coupons..."
-                    />
-                    <button
-                      class="btn btn-primary"
-                      type="button"
-                      id="couponSearchButton"
-                    >
+                    /><button class="btn btn-primary" id="couponSearchButton">
                       <i class="fas fa-search"></i>
                     </button>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="d-flex flex-wrap gap-2 justify-content-md-end">
-                    <select class="form-select w-auto" id="couponStatusFilter">
-                      <option value="all">All Status</option>
-                      <option value="active">Active</option>
-                      <option value="inactive">Inactive</option>
-                      <option value="expired">Expired</option>
-                    </select>
-                    <button class="btn btn-outline-secondary">
-                      <i class="fas fa-filter"></i>
-                    </button>
-                  </div>
+                  <select
+                    class="form-select w-auto float-md-end"
+                    id="couponStatusFilter"
+                  >
+                    <option value="all">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                    <option value="expired">Expired</option>
+                  </select>
                 </div>
               </div>
             </div>
-
-            <!-- Coupons Table -->
-            <div class="table-responsive mt-3">
-              <table class="table table-striped">
+            <div class="table-responsive">
+              <table class="table">
                 <thead>
                   <tr>
                     <th>Code</th>
@@ -287,11 +254,9 @@
                 </thead>
                 <tbody id="couponsTable">
                   <tr>
-                    <td colspan="8" class="text-center py-4">
-                      <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading coupons...</span>
-                      </div>
-                      <p class="mt-3 text-muted">Loading coupon records...</p>
+                    <td colspan="8" class="text-center py-5">
+                      <div class="spinner-border"></div>
+                      <p>Loading coupons...</p>
                     </td>
                   </tr>
                 </tbody>
@@ -301,50 +266,57 @@
 
           <!-- Analytics Section -->
           <div id="analyticsSection" style="display: none">
-            <div
-              class="page-header d-flex justify-content-between align-items-center"
-            >
+            <div class="page-header">
               <h1>Performance Analytics</h1>
-              <div>
-                <button class="btn btn-outline-secondary">
-                  <i class="fas fa-download me-1"></i> Export
-                </button>
-              </div>
+              <button class="btn btn-outline-primary">
+                <i class="fas fa-download me-1"></i> Export
+              </button>
             </div>
-
             <div class="row g-4">
               <div class="col-md-8">
-                <div class="chart-container">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-4"
-                  >
-                    <h5 class="mb-0">Template Downloads</h5>
-                    <div class="btn-group btn-group-sm">
-                      <button class="btn btn-outline-secondary">Week</button>
-                      <button class="btn btn-primary">Month</button>
-                      <button class="btn btn-outline-secondary">Year</button>
+                <div
+                  class="chart-container p-4"
+                  style="background: var(--surface); border-radius: 20px"
+                >
+                  <div class="d-flex justify-content-between mb-4">
+                    <h5>Template Downloads</h5>
+                    <div>
+                      <button class="btn btn-sm btn-outline-secondary">
+                        Week</button
+                      ><button class="btn btn-sm btn-primary mx-1">Month</button
+                      ><button class="btn btn-sm btn-outline-secondary">
+                        Year
+                      </button>
                     </div>
                   </div>
                   <canvas id="downloadsChart" height="300"></canvas>
                 </div>
               </div>
               <div class="col-md-4">
-                <div class="chart-container">
+                <div
+                  class="chart-container p-4"
+                  style="background: var(--surface); border-radius: 20px"
+                >
                   <h5 class="mb-4">Top Templates</h5>
                   <canvas id="popularTemplatesChart" height="300"></canvas>
                 </div>
               </div>
             </div>
-
             <div class="row g-4 mt-2">
               <div class="col-md-6">
-                <div class="chart-container">
+                <div
+                  class="chart-container p-4"
+                  style="background: var(--surface); border-radius: 20px"
+                >
                   <h5 class="mb-4">Revenue by Category</h5>
                   <canvas id="revenueChart" height="250"></canvas>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="chart-container">
+                <div
+                  class="chart-container p-4"
+                  style="background: var(--surface); border-radius: 20px"
+                >
                   <h5 class="mb-4">User Engagement</h5>
                   <canvas id="engagementChart" height="250"></canvas>
                 </div>
@@ -352,29 +324,66 @@
             </div>
           </div>
 
-          <!-- Payments Section -->
+          <!-- Sales Section -->
           <div id="paymentsSection" style="display: none">
-            <div
-              class="page-header d-flex justify-content-between align-items-center"
-            >
-              <h1>Payment Records</h1>
+            <div class="page-header">
+              <h1>Sales & Orders</h1>
               <div class="d-flex gap-2">
-                <button class="btn btn-outline-secondary">
-                  <i class="fas fa-filter me-1"></i> Filter
-                </button>
-                <button class="btn btn-primary">
-                  <i class="fas fa-download me-1"></i> Export
+                <select
+                  class="form-select form-select-sm"
+                  id="salesTypeFilter"
+                  style="width: auto"
+                >
+                  <option value="all">All Orders</option>
+                  <option value="paid">Paid Orders</option>
+                  <option value="free">Free Downloads</option></select
+                ><button
+                  class="btn btn-outline-primary btn-sm"
+                  id="salesRefreshBtn"
+                >
+                  <i class="fas fa-sync-alt me-1"></i> Refresh</button
+                ><button class="btn btn-primary btn-sm" id="addTestOrderBtn">
+                  <i class="fas fa-plus me-1"></i> Test Order
                 </button>
               </div>
             </div>
-
-            <div class="table-responsive mt-3">
-              <table class="table table-striped">
+            <div class="sales-stat-row">
+              <div class="sales-mini-card">
+                <div class="sales-mini-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div>
+                  <div class="sales-mini-val" id="salesTotalOrders">0</div>
+                  <div class="sales-mini-label">Total Orders</div>
+                </div>
+              </div>
+              <div class="sales-mini-card">
+                <div class="sales-mini-icon">
+                  <i class="fas fa-rupee-sign"></i>
+                </div>
+                <div>
+                  <div class="sales-mini-val" id="salesTotalRevenue">₹0</div>
+                  <div class="sales-mini-label">Paid Revenue</div>
+                </div>
+              </div>
+              <div class="sales-mini-card">
+                <div class="sales-mini-icon">
+                  <i class="fas fa-download"></i>
+                </div>
+                <div>
+                  <div class="sales-mini-val" id="salesFreeDownloads">0</div>
+                  <div class="sales-mini-label">Free Downloads</div>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
                 <thead>
                   <tr>
-                    <th>ID</th>
+                    <th>Order ID</th>
+                    <th>Type</th>
                     <th>Template</th>
-                    <th>User</th>
+                    <th>User / Email</th>
                     <th>Amount</th>
                     <th>Date</th>
                     <th>Status</th>
@@ -382,33 +391,34 @@
                 </thead>
                 <tbody id="paymentsTable">
                   <tr>
-                    <td colspan="6" class="text-center py-4">
-                      <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading payments...</span>
-                      </div>
-                      <p class="mt-3 text-muted">Loading payment records...</p>
+                    <td colspan="7" class="text-center py-5">
+                      <div class="spinner-border text-primary"></div>
+                      <p>Loading orders...</p>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-
-            <div class="d-flex justify-content-between align-items-center mt-4">
-              <div class="text-muted">Showing 0 of 0 records</div>
+            <div
+              class="d-flex justify-content-between align-items-center mt-3 px-1"
+            >
+              <div
+                class="text-muted"
+                id="salesRecordCount"
+                style="font-size: 0.75rem"
+              >
+                Showing 0 orders
+              </div>
               <nav>
-                <ul class="pagination">
+                <ul class="pagination pagination-sm mb-0">
                   <li class="page-item disabled">
                     <a class="page-link" href="#">Previous</a>
                   </li>
                   <li class="page-item active">
                     <a class="page-link" href="#">1</a>
                   </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">2</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">3</a>
-                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
                   <li class="page-item">
                     <a class="page-link" href="#">Next</a>
                   </li>
@@ -420,10 +430,9 @@
       </div>
     </div>
 
-    <!-- Modals -->
     <!-- Add Template Modal -->
     <div class="modal fade" id="addTemplateModal" tabindex="-1">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Add New Template</h5>
@@ -438,8 +447,8 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="mb-3">
-                    <label class="form-label">Template Name*</label>
-                    <input
+                    <label class="form-label">Template Name*</label
+                    ><input
                       type="text"
                       class="form-control"
                       id="templateName"
@@ -447,20 +456,15 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label"
-                      >Description* (Max 75 characters)</label
-                    >
-                    <textarea
+                    <label class="form-label">Description* (Max 75 chars)</label
+                    ><textarea
                       class="form-control"
                       id="templateDescription"
                       rows="3"
                       maxlength="75"
                       required
                     ></textarea>
-                    <div
-                      class="char-counter within-limit"
-                      id="templateDescriptionCounter"
-                    >
+                    <div class="char-counter" id="templateDescriptionCounter">
                       0/75
                     </div>
                   </div>
@@ -470,14 +474,9 @@
                       class="dropdown-with-delete"
                       id="categoryDropdownContainer"
                     >
-                      <select
-                        class="form-select"
-                        id="templateCategory"
-                        required
-                      >
-                        <option value="">Select...</option>
-                      </select>
-                      <input type="hidden" id="templateCategoryId" value="" />
+                      <select class="form-select" id="templateCategory">
+                        <option value="">Select...</option></select
+                      ><input type="hidden" id="templateCategoryId" />
                       <div class="dropdown-display" id="categoryDisplay">
                         Select...
                       </div>
@@ -493,18 +492,9 @@
                       class="dropdown-with-delete"
                       id="subcategoryDropdownContainer"
                     >
-                      <select
-                        class="form-select"
-                        id="templateSubCategory"
-                        required
-                      >
-                        <option value="">Select...</option>
-                      </select>
-                      <input
-                        type="hidden"
-                        id="templateSubCategoryId"
-                        value=""
-                      />
+                      <select class="form-select" id="templateSubCategory">
+                        <option value="">Select...</option></select
+                      ><input type="hidden" id="templateSubCategoryId" />
                       <div class="dropdown-display" id="subcategoryDisplay">
                         Select...
                       </div>
@@ -517,18 +507,16 @@
                   <div class="mb-3">
                     <label class="form-label d-block">Pricing Type</label>
                     <div class="d-flex align-items-center">
-                      <label class="toggle-switch">
-                        <input type="checkbox" id="templateIsFree" />
-                        <span class="toggle-slider"></span>
-                      </label>
-                      <span class="form-check-label ms-2" id="pricingLabel"
-                        >Paid</span
-                      >
+                      <label class="toggle-switch"
+                        ><input type="checkbox" id="templateIsFree" /><span
+                          class="toggle-slider"
+                        ></span></label
+                      ><span class="ms-2" id="pricingLabel">Paid</span>
                     </div>
                   </div>
                   <div class="mb-3" id="priceControl">
-                    <label class="form-label">Price (₹)*</label>
-                    <input
+                    <label class="form-label">Price (₹)*</label
+                    ><input
                       type="number"
                       class="form-control"
                       id="templatePrice"
@@ -538,265 +526,215 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label"
-                      >Discounted Price (Optional)</label
-                    >
-                    <input
+                    <label class="form-label">Discounted Price</label
+                    ><input
                       type="number"
                       class="form-control"
                       id="templateDiscountedPrice"
                       min="0"
-                      placeholder="Leave blank if no discount"
+                      placeholder="Optional"
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label">Layout</label>
-                    <input
+                    <label class="form-label">Layout</label
+                    ><input
                       type="text"
                       class="form-control"
                       id="templateLayout"
-                      placeholder="e.g., Responsive, Fixed, Grid"
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label">Framework</label>
-                    <input
+                    <label class="form-label">Framework</label
+                    ><input
                       type="text"
                       class="form-control"
                       id="templateFramework"
-                      placeholder="e.g., Bootstrap 5, Tailwind CSS, React"
                     />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="mb-3">
-                    <label class="form-label">Status*</label>
-                    <select class="form-select" id="templateStatus" required>
+                    <label class="form-label">Status*</label
+                    ><select class="form-select" id="templateStatus">
                       <option value="draft">Draft</option>
                       <option value="active">Active</option>
                       <option value="archived">Archived</option>
                     </select>
                   </div>
                   <div class="mb-3">
-                    <label class="form-label">Tags (comma separated)</label>
-                    <input
+                    <label class="form-label">Tags</label
+                    ><input
                       type="text"
                       class="form-control"
                       id="templateTags"
-                      placeholder="minimal, dark, portfolio, responsive"
                     />
                   </div>
-
-                  <!-- Template Badges -->
                   <div class="mb-3">
                     <label class="form-label">Template Badges</label>
-                    <small class="text-muted d-block mb-2"
-                      >Select badges to display on template card</small
-                    >
                     <div class="badge-selector">
-                      <label class="badge-option">
-                        <input
+                      <label class="badge-option"
+                        ><input
                           type="checkbox"
                           name="templateBadge"
                           value="new"
-                        />
-                        <span class="badge badge-new">New</span>
-                      </label>
-                      <label class="badge-option">
-                        <input
+                        /><span class="badge badge-new">New</span></label
+                      ><label class="badge-option"
+                        ><input
                           type="checkbox"
                           name="templateBadge"
                           value="popular"
-                        />
-                        <span class="badge badge-popular">Popular</span>
-                      </label>
-                      <label class="badge-option">
-                        <input
+                        /><span class="badge badge-popular"
+                          >Popular</span
+                        ></label
+                      ><label class="badge-option"
+                        ><input
                           type="checkbox"
                           name="templateBadge"
                           value="featured"
-                        />
-                        <span class="badge badge-featured">Featured</span>
-                      </label>
-                      <label class="badge-option">
-                        <input
+                        /><span class="badge badge-featured"
+                          >Featured</span
+                        ></label
+                      ><label class="badge-option"
+                        ><input
                           type="checkbox"
                           name="templateBadge"
                           value="premium"
-                        />
-                        <span class="badge badge-premium">Premium</span>
-                      </label>
-                      <label class="badge-option">
-                        <input
+                        /><span class="badge badge-premium"
+                          >Premium</span
+                        ></label
+                      ><label class="badge-option"
+                        ><input
                           type="checkbox"
                           name="templateBadge"
                           value="trending"
-                        />
-                        <span class="badge badge-trending">Trending</span>
-                      </label>
+                        /><span class="badge badge-trending"
+                          >Trending</span
+                        ></label
+                      >
                     </div>
                   </div>
-
-                  <!-- Playlist Assignment -->
                   <div class="mb-3">
                     <label class="form-label">Add to Playlist</label>
-                    <small class="text-muted d-block mb-2"
-                      >Select playlists for homepage display</small
-                    >
                     <div class="playlist-selector">
-                      <label class="playlist-option">
-                        <input
+                      <label class="playlist-option"
+                        ><input
                           type="checkbox"
                           name="templatePlaylist"
                           value="premium_products"
-                        />
-                        <span class="badge badge-premium"
+                        /><span class="badge bg-primary"
                           >Premium Products</span
-                        >
-                      </label>
-                      <label class="playlist-option">
-                        <input
+                        ></label
+                      ><label class="playlist-option"
+                        ><input
                           type="checkbox"
                           name="templatePlaylist"
                           value="trending_now"
-                        />
-                        <span class="badge badge-trending">Trending Now</span>
-                      </label>
-                      <label class="playlist-option">
-                        <input
+                        /><span class="badge bg-warning"
+                          >Trending Now</span
+                        ></label
+                      ><label class="playlist-option"
+                        ><input
                           type="checkbox"
                           name="templatePlaylist"
                           value="best_sellers"
-                        />
-                        <span class="badge badge-popular">Best Sellers</span>
-                      </label>
-                      <label class="playlist-option">
-                        <input
+                        /><span class="badge bg-success"
+                          >Best Sellers</span
+                        ></label
+                      ><label class="playlist-option"
+                        ><input
                           type="checkbox"
                           name="templatePlaylist"
                           value="new_arrivals"
-                        />
-                        <span class="badge badge-new">New Arrivals</span>
-                      </label>
-                      <label class="playlist-option">
-                        <input
+                        /><span class="badge bg-info">New Arrivals</span></label
+                      ><label class="playlist-option"
+                        ><input
                           type="checkbox"
                           name="templatePlaylist"
                           value="editor_picks"
-                        />
-                        <span class="badge badge-featured">Editor's Picks</span>
-                      </label>
+                        /><span class="badge bg-secondary"
+                          >Editor's Picks</span
+                        ></label
+                      >
                     </div>
                   </div>
-
                   <div class="mb-3">
-                    <label class="form-label">Upload File*</label>
-                    <input
+                    <label class="form-label">Upload File*</label
+                    ><input
                       class="form-control"
                       type="file"
                       id="editTemplateFile"
-                      accept=".pdf,.csv,.zip,.jpg,.jpeg,.png,.docx"
+                      accept=".pdf,.zip,.png,.jpg,.docx"
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label">Preview Image*</label>
-                    <input
+                    <label class="form-label">Preview Image*</label
+                    ><input
                       class="form-control"
                       type="file"
                       id="templatePreview"
                       accept="image/*"
                       required
                     />
-                    <div
-                      class="mt-2 text-center"
-                      id="previewImageContainer"
-                    ></div>
+                    <div id="previewImageContainer" class="mt-2"></div>
                   </div>
                   <div class="mb-3">
-                    <label class="form-label">Live Preview URL</label>
-                    <input
+                    <label class="form-label">Live Preview URL</label
+                    ><input
                       type="url"
                       class="form-control"
                       id="templateLivePreviewUrl"
-                      placeholder="https://your-demo-link.com"
+                      placeholder="https://..."
                     />
                   </div>
                 </div>
               </div>
-
-              <!-- Detailed Information Section -->
-              <div class="detail-section">
-                <h6>Detailed Information</h6>
+              <div class="detail-section mt-3 pt-3 border-top">
+                <h6 class="fw-bold mb-3">Detailed Information</h6>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label"
                         >Key Features (one per line)</label
-                      >
-                      <textarea
+                      ><textarea
                         class="form-control"
                         id="templateFeatures"
                         rows="3"
-                        placeholder="Responsive design&#10;Clean code&#10;Easy to customize"
                       ></textarea>
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">Files Included</label>
-                      <input
+                      <label class="form-label">Files Included</label
+                      ><input
                         type="text"
                         class="form-control"
                         id="templateFilesIncluded"
-                        placeholder="e.g., HTML, CSS, JS, Documentation"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Support Duration</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="templateSupport"
-                        placeholder="e.g., 6 Months, 1 Year, Lifetime"
                       />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
-                      <label class="form-label"
-                        >Requirements (one per line)</label
-                      >
-                      <textarea
+                      <label class="form-label">Requirements</label
+                      ><textarea
                         class="form-control"
                         id="templateRequirements"
                         rows="3"
-                        placeholder="WordPress 5.0+&#10;PHP 7.4+&#10;MySQL 5.6+"
                       ></textarea>
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">Compatible Browsers</label>
-                      <input
+                      <label class="form-label">Support Duration</label
+                      ><input
                         type="text"
                         class="form-control"
-                        id="templateBrowsers"
-                        placeholder="e.g., Chrome, Firefox, Safari, Edge"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Last Updated</label>
-                      <input
-                        type="date"
-                        class="form-control"
-                        id="templateLastUpdated"
+                        id="templateSupport"
                       />
                     </div>
                   </div>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label">Usage Instructions</label>
-                  <textarea
+                  <label class="form-label">Instructions</label
+                  ><textarea
                     class="form-control"
                     id="templateInstructions"
                     rows="3"
-                    placeholder="Step-by-step instructions for using this template..."
                   ></textarea>
                 </div>
               </div>
@@ -808,9 +746,8 @@
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary" id="saveTemplateBtn">
+              Cancel</button
+            ><button type="button" class="btn btn-primary" id="saveTemplateBtn">
               Save Template
             </button>
           </div>
@@ -833,8 +770,8 @@
           <div class="modal-body">
             <form id="couponForm">
               <div class="mb-3">
-                <label class="form-label">Coupon Code*</label>
-                <input
+                <label class="form-label">Coupon Code*</label
+                ><input
                   type="text"
                   class="form-control"
                   id="couponCode"
@@ -842,8 +779,8 @@
                 />
               </div>
               <div class="mb-3">
-                <label class="form-label">Discount Value*</label>
-                <input
+                <label class="form-label">Discount Value*</label
+                ><input
                   type="number"
                   class="form-control"
                   id="couponDiscount"
@@ -852,15 +789,15 @@
                 />
               </div>
               <div class="mb-3">
-                <label class="form-label">Discount Type*</label>
-                <select class="form-select" id="couponType" required>
+                <label class="form-label">Discount Type*</label
+                ><select class="form-select" id="couponType">
                   <option value="percentage">Percentage</option>
                   <option value="fixed">Fixed Amount</option>
                 </select>
               </div>
               <div class="mb-3">
-                <label class="form-label">Maximum Usage*</label>
-                <input
+                <label class="form-label">Max Usage*</label
+                ><input
                   type="number"
                   class="form-control"
                   id="couponMaxUsage"
@@ -870,8 +807,8 @@
                 />
               </div>
               <div class="mb-3">
-                <label class="form-label">Valid Until*</label>
-                <input
+                <label class="form-label">Valid Until*</label
+                ><input
                   type="date"
                   class="form-control"
                   id="couponValidUntil"
@@ -879,8 +816,8 @@
                 />
               </div>
               <div class="mb-3">
-                <label class="form-label">Status*</label>
-                <select class="form-select" id="couponStatus" required>
+                <label class="form-label">Status*</label
+                ><select class="form-select" id="couponStatus">
                   <option value="active">Active</option>
                   <option value="inactive">Inactive</option>
                 </select>
@@ -893,9 +830,8 @@
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary" id="saveCouponBtn">
+              Cancel</button
+            ><button type="button" class="btn btn-primary" id="saveCouponBtn">
               Save Coupon
             </button>
           </div>
@@ -903,11 +839,39 @@
       </div>
     </div>
 
-    <!-- Edit Template Modal -->
+    <!-- Edit Template Modal (dynamic - content filled by JS) -->
     <div class="modal fade" id="editTemplateModal" tabindex="-1"></div>
-
     <!-- Edit Coupon Modal -->
     <div class="modal fade" id="editCouponModal" tabindex="-1"></div>
+
+    <!-- Preview Details Modal (for the preview button) -->
+    <div class="modal fade" id="previewDetailsModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="previewModalTitle">Template Details</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body" id="previewModalBody">Loading...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="templify-toast" id="templifyToast"></div>
+
     <script src="admin.js"></script>
   </body>
 </html>
