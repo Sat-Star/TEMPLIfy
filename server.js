@@ -116,6 +116,50 @@ const DownloadTokenSchema = new mongoose.Schema({
 });
 const DownloadToken = mongoose.model("DownloadToken", DownloadTokenSchema);
 
+// Order Schema (for paid template purchases)
+const OrderSchema = new mongoose.Schema({
+  templateId: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "Template",
+  },
+  templateName: { type: String, required: true },
+  customerName: { type: String, required: true },
+  customerEmail: { type: String, required: true },
+  customerPhone: { type: String, required: true },
+  amountInPaise: { type: Number, required: true }, // Razorpay amount in paise
+  originalPrice: { type: Number }, // Original price before discount
+  discountedPrice: { type: Number }, // Price customer paid (after coupon/discount)
+  couponCode: { type: String }, // Applied coupon code, if any
+  couponDiscount: { type: Number }, // Discount amount from coupon
+  razorpayPaymentId: { type: String, required: true, unique: true },
+  razorpayOrderId: { type: String },
+  razorpaySignature: { type: String },
+  status: {
+    type: String,
+    enum: ["completed", "pending", "failed"],
+    default: "completed",
+  },
+  createdAt: { type: Date, default: Date.now },
+});
+const Order = mongoose.model("Order", OrderSchema);
+
+// FreeDownload Schema (for free template downloads)
+const FreeDownloadSchema = new mongoose.Schema({
+  templateId: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "Template",
+  },
+  templateName: { type: String, required: true },
+  customerName: { type: String, required: true },
+  customerEmail: { type: String, required: true },
+  customerPhone: { type: String, required: true },
+  status: { type: String, enum: ["downloaded"], default: "downloaded" },
+  createdAt: { type: Date, default: Date.now },
+});
+const FreeDownload = mongoose.model("FreeDownload", FreeDownloadSchema);
+
 // Category Schema and Model
 const CategorySchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
@@ -1045,6 +1089,146 @@ app.post("/api/admin/migrate-fileids", async (req, res) => {
   } catch (err) {
     console.error("Migration error:", err);
     res.status(500).json({ error: "Migration failed" });
+  }
+});
+
+// Order API Endpoints (for paid template purchases)
+
+// Create a new paid order
+app.post("/api/orders", async (req, res) => {
+  try {
+    const {
+      templateId,
+      templateName,
+      customerName,
+      customerEmail,
+      customerPhone,
+      amountInPaise,
+      originalPrice,
+      discountedPrice,
+      couponCode,
+      couponDiscount,
+      razorpayPaymentId,
+      razorpayOrderId,
+      razorpaySignature,
+    } = req.body;
+
+    if (!templateId || !customerEmail || !razorpayPaymentId) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const order = new Order({
+      templateId,
+      templateName,
+      customerName,
+      customerEmail,
+      customerPhone,
+      amountInPaise,
+      originalPrice,
+      discountedPrice,
+      couponCode,
+      couponDiscount,
+      razorpayPaymentId,
+      razorpayOrderId,
+      razorpaySignature,
+      status: "completed",
+    });
+
+    await order.save();
+    res.status(201).json(order);
+  } catch (err) {
+    console.error("Order creation error:", err);
+    if (err.code === 11000) {
+      return res
+        .status(400)
+        .json({ error: "Order with this payment ID already exists" });
+    }
+    res.status(400).json({ error: "Failed to create order" });
+  }
+});
+
+// Get all paid orders (for admin)
+app.get("/api/orders", async (req, res) => {
+  try {
+    const orders = await Order.find()
+      .sort({ createdAt: -1 })
+      .populate("templateId");
+    res.json(orders);
+  } catch (err) {
+    console.error("Get orders error:", err);
+    res.status(500).json({ error: "Failed to fetch orders" });
+  }
+});
+
+// Get single order by ID
+app.get("/api/orders/:id", async (req, res) => {
+  try {
+    const order = await Order.findById(req.params.id).populate("templateId");
+    if (!order) return res.status(404).json({ error: "Order not found" });
+    res.json(order);
+  } catch (err) {
+    res.status(400).json({ error: "Failed to fetch order" });
+  }
+});
+
+// FreeDownload API Endpoints (for free template downloads)
+
+// Create a new free download record
+app.post("/api/downloads", async (req, res) => {
+  try {
+    const {
+      templateId,
+      templateName,
+      customerName,
+      customerEmail,
+      customerPhone,
+    } = req.body;
+
+    if (!templateId || !customerEmail) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const freeDownload = new FreeDownload({
+      templateId,
+      templateName,
+      customerName,
+      customerEmail,
+      customerPhone,
+      status: "downloaded",
+    });
+
+    await freeDownload.save();
+    res.status(201).json(freeDownload);
+  } catch (err) {
+    console.error("Free download creation error:", err);
+    res.status(400).json({ error: "Failed to record free download" });
+  }
+});
+
+// Get all free downloads (for admin)
+app.get("/api/downloads", async (req, res) => {
+  try {
+    const downloads = await FreeDownload.find()
+      .sort({ createdAt: -1 })
+      .populate("templateId");
+    res.json(downloads);
+  } catch (err) {
+    console.error("Get downloads error:", err);
+    res.status(500).json({ error: "Failed to fetch downloads" });
+  }
+});
+
+// Get single free download by ID
+app.get("/api/downloads/:id", async (req, res) => {
+  try {
+    const download = await FreeDownload.findById(req.params.id).populate(
+      "templateId",
+    );
+    if (!download)
+      return res.status(404).json({ error: "Download record not found" });
+    res.json(download);
+  } catch (err) {
+    res.status(400).json({ error: "Failed to fetch download" });
   }
 });
 

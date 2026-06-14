@@ -113,7 +113,15 @@ const razorpayConfig = {
   handler: async function (response) {
     document.getElementById("rzp-button").innerHTML =
       '<span class="loading"></span> Verifying Payment...';
-    const verificationResult = await verifyPayment(response);
+    // Get customer data from form
+    const nameInput = document.getElementById("customerName");
+    const emailInput = document.getElementById("customerEmail");
+    const contactInput = document.getElementById("customerContact");
+    const verificationResult = await verifyPayment(response, {
+      name: nameInput ? nameInput.value.trim() : "",
+      email: emailInput ? emailInput.value.trim() : "",
+      phone: contactInput ? contactInput.value.trim() : "",
+    });
     // verificationResult is the parsed JSON from the server
     if (verificationResult && verificationResult.success) {
       // if server returned a downloadToken, save it and build the protected download URL
@@ -181,12 +189,32 @@ if (document.getElementById("rzp-button")) {
       return;
     }
     if (isFree || finalPrice === 0) {
-      // For free templates or 100% discount, just start download
+      // For free templates or 100% discount, record the download and start download
       this.innerHTML = '<span class="loading"></span> Preparing Download...';
+      const btnRef = this;
+
+      // Record free download
+      try {
+        await fetch(`${API_BASE_URL}/api/downloads`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            templateId: templateId,
+            templateName: productName,
+            customerName: nameInput.value.trim(),
+            customerEmail: emailInput.value.trim(),
+            customerPhone: contactInput.value.trim(),
+          }),
+        });
+      } catch (downloadErr) {
+        console.error("Failed to record free download:", downloadErr);
+        // Don't block download - recording failure shouldn't prevent download
+      }
+
       setTimeout(() => {
         showSuccess();
         startDownload();
-        this.innerHTML = '<i class="fas fa-download"></i> Download';
+        btnRef.innerHTML = '<i class="fas fa-download"></i> Download';
       }, 800);
       return;
     }
@@ -241,8 +269,8 @@ async function createRazorpayOrder() {
   return data.orderId;
 }
 
-// Simulate payment verification (replace with actual API call)
-async function verifyPayment(paymentResponse) {
+// Verify payment and create order record
+async function verifyPayment(paymentResponse, customerData = {}) {
   // In production, call your backend to verify
   // Razorpay sends: razorpay_payment_id, razorpay_order_id, razorpay_signature
   try {
@@ -257,6 +285,35 @@ async function verifyPayment(paymentResponse) {
       }),
     });
     const data = await response.json();
+
+    // If payment verified successfully, create an order record
+    if (data && data.success) {
+      try {
+        await fetch(`${API_BASE_URL}/api/orders`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            templateId: templateId,
+            templateName: productName,
+            customerName: customerData.name || "",
+            customerEmail: customerData.email || "",
+            customerPhone: customerData.phone || "",
+            amountInPaise: razorpayConfig.amount, // Amount in paise
+            originalPrice: originalPrice,
+            discountedPrice: finalPrice,
+            couponCode: appliedCoupon ? appliedCoupon.code : null,
+            couponDiscount: appliedCoupon ? appliedCoupon.discount : null,
+            razorpayPaymentId: paymentResponse.razorpay_payment_id,
+            razorpayOrderId: paymentResponse.razorpay_order_id,
+            razorpaySignature: paymentResponse.razorpay_signature,
+          }),
+        });
+      } catch (orderErr) {
+        console.error("Failed to create order record:", orderErr);
+        // Don't block payment - order creation failure shouldn't prevent download
+      }
+    }
+
     return data;
   } catch (err) {
     return { success: false };

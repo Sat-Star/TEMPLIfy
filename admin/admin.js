@@ -814,8 +814,10 @@ async function loadAllOrders() {
             id: o._id,
             type: "paid",
             template: o.templateName,
-            user: o.email,
-            amount: o.amount ? `₹${(o.amount / 100).toLocaleString()}` : "₹—",
+            user: o.customerEmail,
+            amount: o.amountInPaise
+              ? `₹${(o.amountInPaise / 100).toLocaleString()}`
+              : "₹—",
             date: o.createdAt,
             status: "completed",
           });
@@ -830,7 +832,7 @@ async function loadAllOrders() {
             id: d._id,
             type: "free",
             template: d.templateName,
-            user: d.email,
+            user: d.customerEmail,
             amount: "FREE",
             date: d.createdAt,
             status: "downloaded",

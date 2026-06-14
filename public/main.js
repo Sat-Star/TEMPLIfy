@@ -112,15 +112,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         {
           id: "newArrivalsGrid",
           name: "New Arrivals",
-          filter: (templates) => {
-            // Sort by creation date (newest first)
-            const sorted = [...templates].sort((a, b) => {
-              const dateA = a.createdAt ? new Date(a.createdAt) : new Date();
-              const dateB = b.createdAt ? new Date(b.createdAt) : new Date();
-              return dateB - dateA;
-            });
-            return sorted.slice(0, 6);
-          },
+          playlistName: "new_arrivals",
           emptyMessage: "No new arrivals available at the moment.",
         },
         {
